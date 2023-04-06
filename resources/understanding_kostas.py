@@ -65,38 +65,41 @@ def main():
     # for i in range(1, len(Z)):
     #     plt.plot(xAxis, Z[i](xAxis), color="purple")
     plot_settings()
+    
+    
+    
     ##########################################
     # Define the area of the solutions
 
-    ##########################################
-    # Question B
-    ##########################################
-    plt.figure("b")
-    plot_problem(l1, l2, l3, l4, xAxis, y, xCorner1,
-                 xCorner2, yCorner1, yCorner2)
-    newZ = []
-    values = [1.9, 4.2]
-    for i in values:
-        c = (3/4) * i - 1
-        print(c)
-        newZ.append(np.poly1d([-(1/c), (1/c) * i]))
-        plt.plot(xAxis, newZ[-1](xAxis),
-                 label=f"c2 = {c}", color="yellow" if i == 1.9 else "blue")
-    plot_settings()
-    ###########################################
-    # Question C
-    ###########################################
-    plt.figure('c')
-    plot_problem(l1, l2, l3, l4, xAxis, y, xCorner1,
-                 xCorner2, yCorner1, yCorner2)
-    values = [1.1, 0.9]
-    newZ = []
-    for i in values:
-        newZ.append(np.poly1d([-(i), 2.5 * i + 3]))
-        plt.plot(xAxis, newZ[-1](xAxis),
-                 label=f"-c1/c2 = {-i}", color="green" if i == 0.9 else "red")
-        ###########################################
-    plot_settings()
+    # ##########################################
+    # # Question B
+    # ##########################################
+    # plt.figure("b")
+    # plot_problem(l1, l2, l3, l4, xAxis, y, xCorner1,
+    #              xCorner2, yCorner1, yCorner2)
+    # newZ = []
+    # values = [1.9, 4.2]
+    # for i in values:
+    #     c = (3/4) * i - 1
+    #     print(c)
+    #     newZ.append(np.poly1d([-(1/c), (1/c) * i]))
+    #     plt.plot(xAxis, newZ[-1](xAxis),
+    #              label=f"c2 = {c}", color="yellow" if i == 1.9 else "blue")
+    # plot_settings()
+    # ###########################################
+    # # Question C
+    # ###########################################
+    # plt.figure('c')
+    # plot_problem(l1, l2, l3, l4, xAxis, y, xCorner1,
+    #              xCorner2, yCorner1, yCorner2)
+    # values = [1.1, 0.9]
+    # newZ = []
+    # for i in values:
+    #     newZ.append(np.poly1d([-(i), 2.5 * i + 3]))
+    #     plt.plot(xAxis, newZ[-1](xAxis),
+    #              label=f"-c1/c2 = {-i}", color="green" if i == 0.9 else "red")
+    #     ###########################################
+    # plot_settings()
     plt.show()
 
 
