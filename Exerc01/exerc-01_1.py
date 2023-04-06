@@ -4,26 +4,28 @@ import numpy as np
 
 class Line:
     """ax1 + bx2 = c"""
+
     def __init__(self, a, b, c, name) -> None:
         self.a, self.b, self.c = map(int, (a, b, c))
         self.name = name
-        
+
     def __str__(self) -> str:
         return f"{self.a if self.a !=1 else ''}x1 + {self.b if self.b !=1 else ''}x2 = {self.c}"
 
     def intersection(self, line):
-        x = (line.c * self.b - self.c * line.b)/(line.a * self.b - self.a * line.b)
+        x = (line.c * self.b - self.c * line.b) / \
+            (line.a * self.b - self.a * line.b)
         y = self.equation(x)
         return [x, y]
 
     def equation(self, x):
         return (-self.a * x + self.c)/self.b
-    
-    def plot(self, x,color):
+
+    def plot(self, x, color):
         plt.plot(x, self.equation(x), label=self, color=color)
         self.plot_settings()
-        plt.show()
-    
+        # plt.show()
+
     def plot_settings(self):
         plt.ylim(-1, 10)
         plt.xlim(-1, 10)
@@ -31,10 +33,9 @@ class Line:
         plt.legend()
 
 
-
 def plot_settings():
-    plt.ylim(-1, 10)
-    plt.xlim(-1, 10)
+    plt.ylim(0, 10)
+    plt.xlim(0, 10)
     plt.grid()
     plt.legend()
 
@@ -139,13 +140,18 @@ def main():
     l1 = Line(2, 1, 4, "l1")
     l2 = Line(1, 2, 5, "l2")
     l3 = Line(1, -2, 1, "l3")
-    
+    l4 = Line(0, 1, 0, "l4")
+
     v1 = l1.intersection(l2)
     v3 = l2.intersection(l3)
-    
-    l1.plot(np.linspace(-100, 100, 100000), "blue")
 
-    # print(l.equation_string)
+    print(l1.equation(2))
+    xAxis = np.linspace(-100, 100, 100000)
+    l1.plot(xAxis, "blue")
+    l2.plot(xAxis, "yellow")
+    l3.plot(xAxis, "green")
+    l4.plot(xAxis, "orange")
+    plt.show()
 
 if __name__ == "__main__":
     main()
