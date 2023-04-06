@@ -17,7 +17,7 @@ def plot_problem(l1, l2, l3, xAxis, y, xCorner1, xCorner2, yCorner1, yCorner2):
     plt.plot(y, xAxis, label="x2 = 0", color="brown")
 
     plt.fill(xCorner1, yCorner1, color="gray", alpha=0.5)
-    plt.fill(xCorner2, yCorner2, color="gray", alpha=0.5)
+    # plt.fill(xCorner2, yCorner2, color="gray", alpha=0.5)
 
 
 def main():
