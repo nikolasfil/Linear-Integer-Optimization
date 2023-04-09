@@ -6,11 +6,6 @@ from plt_line import line
 
 
 
-def plot_settings():
-    plt.ylim(0, 10)
-    plt.xlim(0, 10)
-    plt.grid()
-    plt.legend()
 
 
 def plot_problem(l1, l2, l3, xAxis, y, xCorner1, xCorner2, yCorner1, yCorner2):
@@ -119,12 +114,6 @@ def main():
 
     xAxis = np.linspace(-100, 100, 100000)
 
-    # l1.plot(xAxis, "blue")
-    # l2.plot(xAxis, "chocolate")
-    # l3.plot(xAxis, "green")
-    # l4.plot(xAxis, "orange", lw= 4)
-    # l5.plot(xAxis, "orange", lw= 4)
-
     l1.plot(xAxis, "blue")
     l2.plot(xAxis, l1.auto_color_chooser())
     l3.plot(xAxis, l2.auto_color_chooser())
@@ -132,17 +121,43 @@ def main():
     l5.plot(xAxis, "orange", lw= 4)
 
 
-    v1 = l1.intersection(l2)
-    v3 = l2.intersection(l3)
+    
+    # fix the axis intersections
+    line_x0 = line(1, 0, 0, "x=0")
+    line_y10 = line(0, 1, 10, "y=10")
+    line_x10 = line(1, 0, 10, "x=10")
 
-    # print(l1.auto_color_chooser('blue'),l1.auto_color_chooser())
+
+    # v0 = line_x0.intersection(line_y10)
+    v0 = [0,10]
+    # plt.plot(v0[0], v0[1], "o", color="red")
+
+
+    # v1 = line_x0.intersection(l1)
+    v1 = [0,4]
+    plt.plot(v1[0], v1[1], "o", color="red")
+
+    v2 = l1.intersection(l2)
+    v3 = l2.intersection(l3)
+    
+    v4 = l3.intersection(line_x10)
+    
+    # v5 = line_x10.intersection(line_y10)
+    v5 = [10,10]
+    # plt.plot(v5[0], v5[1], "o", color="red")
+
+
+
+    x = [i[0] for i in [v0, v1, v2, v3, v4, v5]]
+    y = [i[1] for i in [v0, v1, v2, v3, v4, v5]]
+
+    plt.fill(x, y, color="gray", alpha=0.5)
+    
+    # print(x)
+
 
     plt.show()
 
 
 if __name__ == "__main__":
-    # print(sorted(mcolors.cnames))
-    
     main()
-    # l1 = line(2,1,4,"l1")
-    # print(l1.a,l1.b,l1.c,l1.name)
