@@ -10,7 +10,7 @@ class Line:
         self.name = name
 
     def __str__(self):
-        return f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{' + ' if self.a and self.b else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
+        return f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{'+' if self.a and self.b>0 else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
 
     def intersection(self, line):
         x = (line.c * self.b - self.c * line.b) / \

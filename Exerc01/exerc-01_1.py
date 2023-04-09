@@ -122,7 +122,7 @@ def main():
     xAxis = np.linspace(-100, 100, 100000)
 
     l1.plot(xAxis, "blue")
-    l2.plot(xAxis, "yellow")
+    l2.plot(xAxis, "red")
     l3.plot(xAxis, "green")
     l4.plot(xAxis, "orange", lw= 4)
     l5.plot(xAxis, "orange", lw= 4)
