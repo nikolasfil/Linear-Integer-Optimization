@@ -15,6 +15,7 @@ class Line:
 
     def parameters(self):
         return self.a, self.b, self.c
+        
 
     def findIntersection(self, line, show: bool = False):
         if ((self.a/self.b-line.a/line.b) == 0):
