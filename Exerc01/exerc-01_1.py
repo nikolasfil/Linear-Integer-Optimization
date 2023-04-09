@@ -125,9 +125,9 @@ def main():
     # l4.plot(xAxis, "orange", lw= 4)
     # l5.plot(xAxis, "orange", lw= 4)
 
-    l1.plot(xAxis, "red")
-    l2.plot(xAxis)
-    l3.plot(xAxis)
+    l1.plot(xAxis, "blue")
+    l2.plot(xAxis, l1.auto_color_chooser())
+    l3.plot(xAxis, l2.auto_color_chooser())
     l4.plot(xAxis, "orange", lw= 4)
     l5.plot(xAxis, "orange", lw= 4)
 
