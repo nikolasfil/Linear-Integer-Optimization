@@ -26,35 +26,22 @@ def plot_equations():
 
     l5.plot(xAxis, "orange", lw=4)
 
-    # # fix the axis intersections
-    # # additional lines for help, temp measure
-    # line_x0 = line(1, 0, 0, "x=0")
-    # line_y10 = line(0, 1, 10, "y=10")
-    # line_x10 = line(1, 0, 10, "x=10")
+    # fix the axis intersections
+    # additional lines for help, temp measure
+    line_x0 = line(1, 0, 0, "x=0")
+    line_y0 = line(0, 1, 0, "y=0")
 
-    # # fill the feasible space, based on the constraints
-    # # find the vector points (different name)
-    # # v0 = line_x0.intersection(line_y10)
-    # v0 = [0, 10]
-    # # plt.plot(v0[0], v0[1], "o", color="red")
+    v1 = l2.intersection(line_x0)
+    v2 = l1.intersection(l2)
+    v3 = l1.intersection(line_y0) 
+    v4 = [0,0]
+    plt.plot(v4[0], v4[1], "o", color="red") 
 
-    # # v1 = line_x0.intersection(l1)
-    # v1 = [0, 4]
-    # plt.plot(v1[0], v1[1], "o", color="red")
 
-    # v2 = l1.intersection(l2)
-    # v3 = l2.intersection(l3)
+    x = [i[0] for i in [v1, v2, v3, v4]]
+    y = [i[1] for i in [v1, v2, v3, v4]]
 
-    # v4 = l3.intersection(line_x10)
-
-    # # v5 = line_x10.intersection(line_y10)
-    # v5 = [10, 10]
-    # # plt.plot(v5[0], v5[1], "o", color="red")
-
-    # x = [i[0] for i in [v0, v1, v2, v3, v4, v5]]
-    # y = [i[1] for i in [v0, v1, v2, v3, v4, v5]]
-
-    # plt.fill(x, y, color="gray", alpha=0.5)
+    plt.fill(x, y, color="gray", alpha=0.5)
 
 
 def graphical_solution_max(a, b, minlim, maxlim, xAxis,legend=True):
@@ -76,7 +63,7 @@ def plt_settings(limit):
 def main():
     
     plt.figure('max 6x1-7.5x2')
-    plt_settings(3)
+    plt_settings(2)
     plot_equations()
     # graphical_solution_max(2, -5, 0, 2, xAxis=xAxis)
 
