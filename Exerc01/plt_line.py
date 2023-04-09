@@ -6,9 +6,10 @@ import matplotlib.colors as mcolors
 class line:
     """ax1 + bx2 = c"""
 
-    def __init__(self, a, b, c, name) -> None:
+    def __init__(self, a, b, c, name, legend_show=True) -> None:
         self.a, self.b, self.c = map(int, (a, b, c))
         self.name = name
+        self.legend_show = legend_show
 
     def __str__(self):
         return f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{'+' if self.a and self.b>0 else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
@@ -46,7 +47,8 @@ class line:
         plt.ylim(0, 10)
         plt.xlim(0, 10)
         plt.grid()
-        plt.legend()
+        if self.legend_show:
+            plt.legend()
 
 
     def auto_color_chooser(self,color=None):
@@ -59,5 +61,4 @@ class line:
             self.ind = colors.index(color) if color in colors else 0
         return colors[self.ind]
 
-        # return colors.pop()
 
