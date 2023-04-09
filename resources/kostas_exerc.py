@@ -32,6 +32,7 @@ def main():
     for i in range(3, 17, 1):
         Z.append(np.poly1d([-3, i]))
 
+
     # Restraints
     # 6x1 + 3x2 = 12 <=> x2 = -2x1 + 4
     restraint1 = [-2, 4]
@@ -61,9 +62,9 @@ def main():
     plt.figure("a")
     plot_problem(l1, l2, l3, l4, xAxis, y, xCorner1,
                  xCorner2, yCorner1, yCorner2)
-    # plt.plot(xAxis, Z[0](xAxis), color="purple", label="maxZ = 3x1 + x2")
-    # for i in range(1, len(Z)):
-    #     plt.plot(xAxis, Z[i](xAxis), color="purple")
+    plt.plot(xAxis, Z[0](xAxis), color="purple", label="maxZ = 3x1 + x2")
+    for i in range(1, len(Z)):
+        plt.plot(xAxis, Z[i](xAxis), color="purple")
     plot_settings()
     ##########################################
     # Define the area of the solutions

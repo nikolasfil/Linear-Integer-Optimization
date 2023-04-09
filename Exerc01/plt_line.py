@@ -15,8 +15,14 @@ class line:
         return f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{'+' if self.a and self.b>0 else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
 
     def intersection(self, line, plotting = True):
-
-        x = (line.c * self.b - self.c * line.b) / (line.a * self.b - self.a * line.b)
+        x_up = line.c * self.b - self.c * line.b
+        x_down = line.a * self.b - self.a * line.b
+        if x_down == 0:
+            # print(f'{self.name} and {line.name} are parallel')
+            return None
+        
+        x = x_up / x_down
+        # x = (line.c * self.b - self.c * line.b) / (line.a * self.b - self.a * line.b)
         y = self.equation(x)
         
         if plotting:
