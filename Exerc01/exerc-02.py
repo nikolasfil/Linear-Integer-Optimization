@@ -30,21 +30,9 @@ def plot_equations():
 
     l5.plot(xAxis, "orange", lw=4)
 
-    # fix the axis intersections
-    # additional lines for help, temp measure
-    line_x0 = line(1, 0, 0, "x=0")
-    line_y0 = line(0, 1, 0, "y=0")
-
-    v1 = l2.intersection(line_x0)
-    v2 = l1.intersection(l2)
-    v3 = l1.intersection(line_y0)
-    v4 = [0, 0]
-    plt.plot(v4[0], v4[1], "o", color="red")
-
-    x = [i[0] for i in [v1, v2, v3, v4]]
-    y = [i[1] for i in [v1, v2, v3, v4]]
-
-    plt.fill(x, y, color="gray", alpha=0.5)
+    
+    v1 = l2.intersection(l7)
+    v3 = l1.intersection(l7)
 
 
 def plt_settings(limit):
@@ -57,13 +45,13 @@ def main():
     xAxis = np.linspace(-100, 100, 100000)
 
     plt.figure('min 6x1-7.5x2')
-    plt_settings(2)
+    plt_settings(1.4)
     plot_equations()
 
-    extra_lines = [line(6, -7.5, c, 'extra') for c in range(0, 5)]
-    for lin in extra_lines:
-        lin.legend_show = False
-        lin.plot(xAxis, 'cornflowerblue')
+    # extra_lines = [line(6, -7.5, c, 'extra') for c in range(0, 5)]
+    # for lin in extra_lines:
+    #     lin.legend_show = False
+    #     lin.plot(xAxis, 'cornflowerblue')
 
     plt.show()
 
