@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.colors as mcolors
 
-from plt_line import Line
+from plt_line import line
 
 
 
@@ -109,28 +110,39 @@ def main_plot():
 
 
 def main():
-    l1 = Line(2, 1, 4, "l1")
-    l2 = Line(1, 2, 5, "l2")
-    l3 = Line(1, -2, 1, "l3")
-    l4 = Line(0, 1, 0, "l4")
-    l5 = Line(1, 0, 0, "l5")
+    l1 = line(2, 1, 4, "l1")
+    l2 = line(1, 2, 5, "l2")
+    l3 = line(1, -2, 1, "l3")
+    l4 = line(0, 1, 0, "l4")
+    l5 = line(1, 0, 0, "l5")
+
+
+    xAxis = np.linspace(-100, 100, 100000)
+
+    # l1.plot(xAxis, "blue")
+    # l2.plot(xAxis, "chocolate")
+    # l3.plot(xAxis, "green")
+    # l4.plot(xAxis, "orange", lw= 4)
+    # l5.plot(xAxis, "orange", lw= 4)
+
+    l1.plot(xAxis, "red")
+    l2.plot(xAxis)
+    l3.plot(xAxis)
+    l4.plot(xAxis, "orange", lw= 4)
+    l5.plot(xAxis, "orange", lw= 4)
+
 
     v1 = l1.intersection(l2)
     v3 = l2.intersection(l3)
 
-    print(l1.equation(2))
-    xAxis = np.linspace(-100, 100, 100000)
-
-    l1.plot(xAxis, "blue")
-    l2.plot(xAxis, "red")
-    l3.plot(xAxis, "green")
-    l4.plot(xAxis, "orange", lw= 4)
-    l5.plot(xAxis, "orange", lw= 4)
+    # print(l1.auto_color_chooser('blue'),l1.auto_color_chooser())
 
     plt.show()
 
 
 if __name__ == "__main__":
+    # print(sorted(mcolors.cnames))
+    
     main()
     # l1 = line(2,1,4,"l1")
     # print(l1.a,l1.b,l1.c,l1.name)
