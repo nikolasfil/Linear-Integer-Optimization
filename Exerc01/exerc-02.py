@@ -19,6 +19,7 @@ def plot_equations():
     l6 = line(1, 1, 1, "l6")
     l7 = line(-1, -1, -1, "l7")
 
+    
     # plot the lines
     l1.plot(xAxis, "blue")
     l2.plot(xAxis, l1.auto_color_chooser())
@@ -32,7 +33,11 @@ def plot_equations():
 
     
     v1 = l2.intersection(l7)
-    v3 = l1.intersection(l7)
+    
+    v2 = l1.intersection(l7)
+
+    # this is the point we want
+    v3 = l3.intersection(l7)
 
 
 def plt_settings(limit):
