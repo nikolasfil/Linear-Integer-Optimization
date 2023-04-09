@@ -60,9 +60,9 @@ def plot_equations():
 def graphical_solution_max(a, b, minlim, maxlim, xAxis,legend=True):
     extra_lines = [line(a, b, i, 'extra') for i in range(minlim, maxlim)]
     for lin in extra_lines:
+        lin.legend_show = legend
         lin.plot(xAxis, 'cornflowerblue')
         # the legend is still showing
-        lin.legend_show = legend
         lin.intersection(line(1, -2, 1, "l3"))
         # lin.plot_settings()
 

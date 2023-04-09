@@ -47,10 +47,10 @@ def plot_equations():
 def graphical_solution_max(a, b, minlim, maxlim, xAxis,legend=True):
     extra_lines = [line(a, b, i, 'extra') for i in range(minlim, maxlim)]
     for lin in extra_lines:
+        lin.legend_show = legend
         lin.plot(xAxis, 'cornflowerblue')
         # the legend is still showing
-        lin.legend_show = legend
-        lin.intersection(line(1, -2, 1, "l3"))
+        # lin.intersection(line(1, -2, 1, "l3"))
         # lin.plot_settings()
 
 
@@ -61,11 +61,12 @@ def plt_settings(limit):
 
 
 def main():
+    xAxis = np.linspace(-100, 100, 100000)
     
     plt.figure('max 6x1-7.5x2')
     plt_settings(2)
     plot_equations()
-    # graphical_solution_max(2, -5, 0, 2, xAxis=xAxis)
+    graphical_solution_max(6, -7.5, 0, 10, xAxis=xAxis,legend=False)
 
     
     plt.show()
