@@ -51,6 +51,8 @@ def main():
     plt.figure('min 6x1-7.5x2')
     plt_settings(1.4)
     plot_equations()
+    plt.savefig('exerc02.png', dpi='figure')
+
 
     plt.show()
 
