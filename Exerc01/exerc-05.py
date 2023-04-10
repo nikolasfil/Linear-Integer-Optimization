@@ -23,10 +23,14 @@ def main():
     for inde,value in enumerate(c) :
         a = np.array([x[:3] for x in value])
         b = np.array([x[3] for x in value])
+
+
         result = np.linalg.solve(a,b)
-        results.append(result)
+        if np.allclose(np.dot(a, result), b):
+           results.append(result)
         print(f'{str(value[0]):14s} \n'+f'{str(value[1]):14s} = {result} \n'+f'{str(value[2]):14s} \n')
 
+    print(len(results))
 
 
     # for inde,result in enumerate(results):
