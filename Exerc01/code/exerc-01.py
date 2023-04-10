@@ -26,48 +26,46 @@ def plot_equations():
 
     l5.plot(xAxis, "orange", lw=4)
 
-    # fix the axis intersections
-    # additional lines for help, temp measure
-    line_x0 = line(1, 0, 0, "x=0")
-    line_y10 = line(0, 1, 10, "y=10")
     line_x10 = line(1, 0, 10, "x=10")
 
     # fill the feasible space, based on the constraints
     # find the vector points (different name)
-    # v0 = line_x0.intersection(line_y10)
     v0 = [0, 10]
-    # plt.plot(v0[0], v0[1], "o", color="red")
 
-    # v1 = line_x0.intersection(l1)
     v1 = [0, 4]
+    # l1 intersection with x=0
     plt.plot(v1[0], v1[1], "o", color="red")
 
     v2 = l1.intersection(l2)
     v3 = l2.intersection(l3)
 
-    v4 = l3.intersection(line_x10)
+    v4 = l3.intersection(line_x10, plotting=False)
 
-    # v5 = line_x10.intersection(line_y10)
+    # corner point for the fill
     v5 = [10, 10]
-    # plt.plot(v5[0], v5[1], "o", color="red")
 
+    # create the x and y coordinates for the fill
     x = [i[0] for i in [v0, v1, v2, v3, v4, v5]]
     y = [i[1] for i in [v0, v1, v2, v3, v4, v5]]
 
+    # fill takes the x and y of a polygon and fills it with color
     plt.fill(x, y, color="gray", alpha=0.5)
 
 
-def graphical_solution_max(a, b, minlim, maxlim, xAxis,legend=True):
+def graphical_solution_max(a, b, minlim, maxlim, xAxis, legend=True):
+    """plots the extra lines of the objective function """
     extra_lines = [line(a, b, i, 'extra') for i in range(minlim, maxlim)]
     for lin in extra_lines:
         lin.legend_show = legend
         lin.plot(xAxis, 'cornflowerblue')
-        # the legend is still showing
+        # we need to find the intersection with the l3 (brown line) to find the max value of the objective function
+
         lin.intersection(line(1, -2, 1, "l3"))
-        # lin.plot_settings()
+        # prints the legend and the intersection points
 
 
 def plt_settings(limit):
+    # adjusts the dimentions of the plot
     plt.ylim(0, limit)
     plt.xlim(0, limit)
     plt.grid()
@@ -75,27 +73,34 @@ def plt_settings(limit):
 
 def main():
     xAxis = np.linspace(-100, 100, 100000)
-    
+
+    plt.figure('feasible region')
+    plt_settings(10)
+    plot_equations()
+    plt.savefig('exerc01-feasible_region.png', dpi='figure')
+
+
     plt.figure('a: max 2x1-5x2')
     plt_settings(10)
-    
+
     plot_equations()
     graphical_solution_max(2, -5, 0, 2, xAxis=xAxis)
+    plt.savefig('exerc01-a.png', dpi='figure')
 
     plt.figure('b: max 2x1-4x2')
     plt_settings(10)
-    
+
     plot_equations()
     graphical_solution_max(2, -4, 0, 3, xAxis=xAxis)
+    plt.savefig('exerc01-b.png', dpi='figure')
 
     plt.figure('c: max 2x1-3x2')
     plt_settings(10)
-    
-    plot_equations()
-    graphical_solution_max(2, -3, 0, 20 , xAxis=xAxis,legend=False)
 
-    # plt.figure('b')
-    # plot_equations()
+    plot_equations()
+    graphical_solution_max(2, -3, 0, 20, xAxis=xAxis, legend=False)
+    plt.savefig('exerc01-c.png', dpi='figure')
+
     plt.show()
 
 
