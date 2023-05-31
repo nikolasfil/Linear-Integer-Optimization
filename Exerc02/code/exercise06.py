@@ -4,7 +4,7 @@ from useful_functions import creating_variables, constraints_on_variables, print
 
 def managers_problem():
     model = pulp.LpProblem(name="managers_problem", sense=pulp.LpMaximize)
-    x = creating_variables(10, lowbound=0, upbound=1)
+    x = creating_variables( 10, lowbound=0, upbound=1)
 
     # I need to put my own constraints here
     Q = 10000
@@ -24,10 +24,10 @@ def managers_problem():
 
     for i in range(len(constraints)):
         model += constraints_on_variables(x, constraints[i], equalities[i])
-        print(f"{constraints_on_variables(x, constraints[i], equalities[i])}")
+        # print(f"{constraints_on_variables(x, constraints[i], equalities[i])}")
 
     model += constraints_on_variables(x, P)
-    print(constraints_on_variables(x, P))
+    # print(constraints_on_variables(x, P))
 
     # solver = pulp.GLPK_CMD(msg=0)
     model.solve()

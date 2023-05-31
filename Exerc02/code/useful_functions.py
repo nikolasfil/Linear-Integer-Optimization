@@ -1,15 +1,16 @@
 import pulp
 
 def creating_variables(number, name='x',lowbound=None,upbound=None):
-    
-    if not lowbound and not upbound:
+    if lowbound is None and upbound is None:
         return [pulp.LpVariable(name=f"{name}{i+1}") for i in range(number)]
 
-    elif not upbound and lowbound:
+    elif upbound is None and lowbound is not None:
         return [pulp.LpVariable(name=f"{name}{i+1}", lowBound=lowbound) for i in range(number)]
-    elif not lowbound and upbound:
+
+    elif lowbound is None and upbound is not None:
         return [pulp.LpVariable(name=f"{name}{i+1}", upBound=upbound) for i in range(number)]
-    else:
+
+    elif lowbound is not None and upbound is not None:
         return [pulp.LpVariable(name=f"{name}{i+1}", lowBound=lowbound,upBound=upbound) for i in range(number)]
 
 
@@ -23,7 +24,6 @@ def constraints_on_variables(x, y, state=None):
         return sum([x[i] * y[i] for i in range(len(x))]) <= y[-1]
     elif state == "gaq":
         return sum([x[i] * y[i] for i in range(len(x))]) >= y[-1]
-
     elif state == "leq":
         return sum([x[i] * y[i] for i in range(len(x))]) < y[-1]
     elif state == "geq":
