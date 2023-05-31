@@ -78,13 +78,45 @@ def main_b():
 
 def main():
 
+    # --------- a --------- 
     x = [pulp.LpVariable(name=f"x{i+1}", lowBound=0) for i in range(4)]
     c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
     obj = [2, 4, 1, 1]
 
     main_a(x,c,obj,"assignment1a",pulp.LpMaximize)
 
+    # --------- b ---------
+    # Ευρευση του διαστηματος αντοχης, βελτιστο πινακα and other shit 
+    
+    print('Disrupting x2')
+    for g in range(-5,6):
+        obj[1] = obj[1] + g
+        
+        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+
+    print('Disrupting x3')
+    for g in range(-5,6):
+        obj[2] = obj[2] + g
+        
+        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+
+    # ----------- c -------------- 
+
+    
+
+    print('Disrupting x2')
+    for g in range(-5,6):
+        c[0][-1] = c[0][-1] + g
+        
+        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+
+    print('Disrupting x3')
+    for g in range(-5,6):
+        c[1][-1] = c[1][-1] + g
+        
+        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+
+
 
 if __name__ == "__main__":
-    # main_a()
     main()
