@@ -15,7 +15,7 @@ def main_a(x,c,obj,name,sense):
     solver = pulp.GLPK_CMD(msg=0)
     model.solve(solver)
 
-    printer(model=model,variables=x)
+    printer(model=model)
 
 
 

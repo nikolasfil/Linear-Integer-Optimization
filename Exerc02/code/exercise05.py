@@ -18,7 +18,7 @@ def knapsackProblem(x,c,obj,name,sense):
     solver = pulp.GLPK_CMD(msg=0)
     model.solve(solver)
 
-    printer(model,x)
+    printer(model)
 
 
 def main():

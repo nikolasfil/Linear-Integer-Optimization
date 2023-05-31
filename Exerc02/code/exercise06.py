@@ -29,9 +29,9 @@ def managers_problem():
     model += constraints_on_variables(x, P)
     print(constraints_on_variables(x, P))
 
-    solver = pulp.GLPK_CMD(msg=0)
-    model.solve(solver)
-    printer(model, x)
+    # solver = pulp.GLPK_CMD(msg=0)
+    model.solve()
+    printer(model)
 
 
 if __name__ == "__main__":
