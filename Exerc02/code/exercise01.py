@@ -20,10 +20,14 @@ def mul(x, y, state=None):
         return sum(x[i] * y[i] for i in range(len(x))) > y[-1]
 
 
+def creating_variables(number, name='x'):
+    return [pulp.LpVariable(name=f"{name}{i+1}", lowBound=0) for i in range(number)]
+
+
 def main_universal():
     model = pulp.LpProblem(name="assignment1a", sense=pulp.LpMaximize)
 
-    x = [pulp.LpVariable(name=f"x{i+1}", lowBound=0) for i in range(4)]
+    x = creating_variables(4)
 
     c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
 
@@ -79,7 +83,7 @@ def main_b():
 def main():
 
     # --------- a --------- 
-    x = [pulp.LpVariable(name=f"x{i+1}", lowBound=0) for i in range(4)]
+    x = creating_variables(4)
     c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
     obj = [2, 4, 1, 1]
 
@@ -108,13 +112,22 @@ def main():
     for g in range(-5,6):
         c[0][-1] = c[0][-1] + g
         
-        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+        main_a(x,c,obj,'assignment1c',pulp.LpMaximize)
 
     print('Disrupting x3')
     for g in range(-5,6):
         c[1][-1] = c[1][-1] + g
         
-        main_a(x,c,obj,'assignment1b',pulp.LpMaximize)
+        main_a(x,c,obj,'assignment1c',pulp.LpMaximize)
+
+
+    # -------- d ----------
+
+    y = creating_variables(3,'y')
+    c = []
+    obj = []
+
+    # main_a(y,c,obj,'assignment1d',pulp.LpMinimize)
 
 
 
