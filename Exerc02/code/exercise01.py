@@ -1,54 +1,7 @@
 import pulp
-
+from useful_functions import creating_variables, constraints_on_variables, printer
 # pip install pulp
 # apt install glpk-utils
-
-
-def mul(x, y, state=None):
-    if not state: 
-        return sum([x[i] * y[i] for i in range(len(x))])
-    if state == "eq":
-        return sum(x[i] * y[i] for i in range(len(x))) == y[-1]
-    elif state == "laq":
-        return sum([x[i] * y[i] for i in range(len(x))]) <= y[-1]
-    elif state == "gaq":
-        return sum(x[i] * y[i] for i in range(len(x))) >= y[-1]
-
-    elif state == "leq":
-        return sum(x[i] * y[i] for i in range(len(x))) < y[-1]
-    elif state == "geq":
-        return sum(x[i] * y[i] for i in range(len(x))) > y[-1]
-
-
-def creating_variables(number, name='x'):
-    return [pulp.LpVariable(name=f"{name}{i+1}", lowBound=0) for i in range(number)]
-
-
-def main_universal():
-    model = pulp.LpProblem(name="assignment1a", sense=pulp.LpMaximize)
-
-    x = creating_variables(4)
-
-    c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
-
-    obj = [2, 4, 1, 1]
-
-    model += sum([(mul(x, c[i], "laq")) for i in range(len(c))])
-    model += mul(x,obj)
-
-    solver = pulp.GLPK_CMD()
-    status = model.solve(solver)
-
-    print('-'*50)
-    print(f"status: {model.status}, {pulp.LpStatus[model.status]}")
-    print(f"objective: {model.objective.value()}")
-    print('-'*50)
-    for var in x:
-        print(f"{var.name}: {var.value()}")
-    print('-'*50)
-    
-    for x,constraint in model.constraints.items():
-        print(f"""{x}: {constraint.value()}""")
 
 
 
@@ -56,34 +9,20 @@ def main_a(x,c,obj,name,sense):
     model = pulp.LpProblem(name=name, sense=sense)
 
     for i in range(len(c)):
-        model += mul(x,c[i],'laq')
-    model += mul(x,obj)
+        model += constraints_on_variables(x,c[i],'laq')
+    model += constraints_on_variables(x,obj)
 
     solver = pulp.GLPK_CMD(msg=0)
     model.solve(solver)
 
-    print('-'*50)
-    print(f"status: {model.status}, {pulp.LpStatus[model.status]}")
-    print(f"objective: {model.objective.value()}")
-    print('-'*50)
-    for var in x:
-        print(f"{var.name}: {var.value()}")
-    print('-'*50)
-    for x,constraint in model.constraints.items():
-        print(f"""{x}: {constraint.value()}""")
-    print('-'*50)
+    printer(model=model,variables=x)
 
-
-
-
-def main_b():
-    model = pulp.LpProblem(name='assignment1b',sense=pulp.LpMaximize)
 
 
 def main():
 
     # --------- a --------- 
-    x = creating_variables(4)
+    x = creating_variables(4,lowbound=0)
     c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
     obj = [2, 4, 1, 1]
 
@@ -123,7 +62,7 @@ def main():
 
     # -------- d ----------
 
-    y = creating_variables(3,'y')
+    y = creating_variables(3,'y',lowbound=0)
     c = []
     obj = []
 
