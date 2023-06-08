@@ -1,0 +1,4 @@
+Formulation of Sudoku Puzzle Using Binary Integer Linear Programming and Its Implementation in Julia, Python, and Minizinc
+
+
+https://www.researchgate.net/publication/361745408_Formulation_of_Sudoku_Puzzle_Using_Binary_Integer_Linear_Programming_and_Its_Implementation_in_Julia_Python_and_Minizinc

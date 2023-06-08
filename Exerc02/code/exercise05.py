@@ -28,7 +28,7 @@ def main():
     c = [ [3,4,3,3,15,13,16,35]]
     obj = [12,12,9,15,90,26,112]
 
-    knapsackProblem(x,c,obj,"assignment5a",pulp.LpMaximize)
+    knapsackProblem(x,c,obj,"assignment5",pulp.LpMaximize)
 
     
  

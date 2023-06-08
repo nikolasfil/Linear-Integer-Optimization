@@ -3,7 +3,7 @@ from useful_functions import creating_variables, constraints_on_variables, print
 
 
 def managers_problem():
-    model = pulp.LpProblem(name="managers_problem", sense=pulp.LpMaximize)
+    model = pulp.LpProblem(name="assignment6", sense=pulp.LpMaximize)
     x = creating_variables( 10, lowbound=0, upbound=1)
 
     # I need to put my own constraints here
@@ -29,7 +29,6 @@ def managers_problem():
     model += constraints_on_variables(x, P)
     # print(constraints_on_variables(x, P))
 
-    # solver = pulp.GLPK_CMD(msg=0)
     model.solve()
     printer(model)
 
