@@ -13,9 +13,6 @@ class line:
 
     def __str__(self):
         """returns the equation"""
-        return self.string_representation()
-
-    def string_representation(self):
 
         output = f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{'+' if self.a and self.b>0 else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
         return output
