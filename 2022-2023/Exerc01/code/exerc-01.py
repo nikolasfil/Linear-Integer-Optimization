@@ -85,15 +85,14 @@ def main():
     plot_equations()
     # plt.savefig("exerc01-feasible_region.png", dpi="figure")
 
-    # plt.figure("a: max 2x1-5x2")
-    # plt_settings(10)
-    # plot_equations()
-    # graphical_solution_max(2, -5, 0, 2, xAxis=xAxis)
+    plt.figure("a: max 2x1-5x2")
+    plt_settings(10)
+    plot_equations()
+    graphical_solution_max(2, -5, 0, 2, xAxis=xAxis)
     # # plt.savefig("img/exerc01-a.png", dpi="figure")
 
     # plt.figure("b: max 2x1-4x2")
     # plt_settings(10)
-
     # plot_equations()
     # graphical_solution_max(2, -4, 0, 3, xAxis=xAxis)
     # # plt.savefig("exerc01-b.png", dpi="figure")

@@ -36,12 +36,15 @@ class Gui(LinearGUI):
     def solution(self, a, b, minlim, maxlim, legend=True):
         """plots the extra lines of the objective function"""
         extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
+
+        line_l3 = [l for l in self.lines if l.name == "l3"][0]
+
         for lin in extra_lines:
             lin.legend_show = legend
             lin.plot(self.xAxis, "cornflowerblue")
             # we need to find the intersection with the l3 (brown line) to find the max value of the objective function
 
-            lin.intersection(line(1, -2, 1, "l3"))
+            lin.intersection(line_l3)
             # prints the legend and the intersection points
 
 
@@ -52,4 +55,16 @@ if __name__ == "__main__":
     gui.name = "a: max 2x1-5x2"
     gui.create_figure()
     gui.solution(2, -5, 0, 2)
+    # gui.plt.savefig("img/exerc01-a.png", dpi="figure")
+
+    gui.name = "b: max 2x1-4x2"
+    gui.create_figure()
+    gui.solution(2, -4, 0, 3)
+    # gui.plt.savefig("img/exerc01-b.png", dpi="figure")
+
+    gui.name = "c: max 2x1-3x2"
+    gui.create_figure()
+    gui.solution(2, -3, 0, 20, legend=False)
+    # gui.plt.savefig("img/exerc01-c.png", dpi="figure")
+
     gui.show()
