@@ -29,6 +29,10 @@ class Gui(LinearGUI):
         # This one is the intersection of l2 and l3
         self.v.append(self.lines[1].intersection(self.lines[2]))
 
+        right_limit = [l for l in self.lines if l.name == "limit"][0]
+
+        self.v.append(self.lines[2].intersection(right_limit, plotting=False))
+
 
 if __name__ == "__main__":
     gui = Gui(
