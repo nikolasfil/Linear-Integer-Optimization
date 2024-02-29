@@ -12,14 +12,13 @@ def plot_equations():
 
     # create the lines from the constraints
     l1 = line(-6, -4.5, -5.1, "l1")
-    l2 = line(6,  9, 8.4, "l2")
+    l2 = line(6, 9, 8.4, "l2")
     l3 = line(12, 9, 10.8, "l3")
     l4 = line(0, 1, 0, "l4")
     l5 = line(1, 0, 0, "l5")
     l6 = line(1, 1, 1, "l6")
     l7 = line(-1, -1, -1, "l7")
 
-    
     # plot the lines
     l1.plot(xAxis, "blue")
     l2.plot(xAxis, l1.auto_color_chooser())
@@ -31,9 +30,8 @@ def plot_equations():
 
     l5.plot(xAxis, "orange", lw=4)
 
-    
     v1 = l2.intersection(l7)
-    
+
     v2 = l1.intersection(l7)
 
     # this is the point we want
@@ -48,11 +46,10 @@ def plt_settings(limit):
 
 def main():
 
-    plt.figure('min 6x1-7.5x2')
+    plt.figure("min 6x1-7.5x2")
     plt_settings(1.4)
     plot_equations()
-    plt.savefig('exerc02.png', dpi='figure')
-
+    # plt.savefig('exerc02.png', dpi='figure')
 
     plt.show()
 
