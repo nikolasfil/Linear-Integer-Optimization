@@ -33,10 +33,23 @@ class Gui(LinearGUI):
 
         self.v.append(self.lines[2].intersection(right_limit, plotting=False))
 
+    def solution(self, a, b, minlim, maxlim, legend=True):
+        """plots the extra lines of the objective function"""
+        extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
+        for lin in extra_lines:
+            lin.legend_show = legend
+            lin.plot(self.xAxis, "cornflowerblue")
+            # we need to find the intersection with the l3 (brown line) to find the max value of the objective function
+
+            lin.intersection(line(1, -2, 1, "l3"))
+            # prints the legend and the intersection points
+
 
 if __name__ == "__main__":
-    gui = Gui(
-        plt,
-        name="Feasible Region",
-    )
-    gui.main()
+    gui = Gui(plt, name="Feasible Region")
+    gui.create_figure()
+
+    gui.name = "a: max 2x1-5x2"
+    gui.create_figure()
+    gui.solution(2, -5, 0, 2)
+    gui.show()

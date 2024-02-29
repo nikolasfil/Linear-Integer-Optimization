@@ -70,10 +70,6 @@ class LinearGUI:
         # It is the upper-left corner
         self.v.append([0, self.limit])
 
-        # right_limit = [l for l in self.lines if l.name == "limit"][0]
-
-        # self.v.append(self.lines[2].intersection(right_limit, plotting=False))
-
     def find_feasible_points(self):
         pass
 
@@ -92,21 +88,14 @@ class LinearGUI:
 
     def solution(self, a, b, minlim, maxlim, legend=True):
         """plots the extra lines of the objective function"""
-        extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
-        for lin in extra_lines:
-            lin.legend_show = legend
-            lin.plot(self.xAxis, "cornflowerblue")
-            # we need to find the intersection with the l3 (brown line) to find the max value of the objective function
 
-            lin.intersection(line(1, -2, 1, "l3"))
-            # prints the legend and the intersection points
-
-    def main(self):
-
+    def create_figure(self, name: str = None):
+        if name:
+            self.name = name
         plt.figure(self.name)
+
         self.plt.ylim(*self.ylim)
         self.plt.xlim(*self.xlim)
         self.plt.grid()
         self.plot_equations()
         self.fill_feasible()
-        self.plt.show()
