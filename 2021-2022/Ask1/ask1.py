@@ -13,25 +13,40 @@ class Gui(LinearGUI):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.lines = []
-        self.lines.append(line(2, 1, 4, "l1", type="line"))
-        self.lines.append(line(1, 2, 5, "l2", type="line"))
-        self.lines.append(line(1, -2, 1, "l3", type="line"))
+        # Bigger than l1 and l2 but smaller than l3 and l4
+        self.lines.append(line(6, 3, 12, "l1", type="line"))
+        self.lines.append(line(4, 8, 16, "l2", type="line"))
+        self.lines.append(line(6, 5, 30, "l3", type="line"))
+        self.lines.append(line(6, 7, 36, "l4", type="line"))
 
     def find_feasible_points(self):
 
         # This one is manual :
         # It is supposed to be the highest y that intersects with the y-axis
-        self.v.append([0, 4])
-        self.plt.plot(*self.v[0], "o", color="red")
+
         # This one is the intersection of l1 and l2
         self.v.append(self.lines[0].intersection(self.lines[1]))
 
-        # This one is the intersection of l2 and l3
-        self.v.append(self.lines[1].intersection(self.lines[2]))
+        self.v.append([0, 4])
+        self.plt.plot(*self.v[0], "o", color="red")
+        # Find the y intersection of l3
 
-        right_limit = [l for l in self.lines if l.name == "limit"][0]
+        y_axis = [l for l in self.lines if l.name == "y-axis"][0]
 
-        self.v.append(self.lines[2].intersection(right_limit, plotting=False))
+        # Intersection of l4 with y
+        self.v.append(self.lines[3].intersection(y_axis))
+
+        # This one is the intersection of l3 and l4
+        self.v.append(self.lines[2].intersection(self.lines[3]))
+
+        x_axis = [l for l in self.lines if l.name == "x-axis"][0]
+
+        self.v.append(self.lines[2].intersection(x_axis, plotting=True))
+
+        self.v.append(self.lines[1].intersection(x_axis, plotting=True))
+
+    def standard_feasible_points(self):
+        pass
 
     def solution(self, a, b, minlim, maxlim, legend=True):
         """plots the extra lines of the objective function"""
@@ -52,19 +67,9 @@ if __name__ == "__main__":
     gui = Gui(plt, name="Feasible Region")
     gui.create_figure()
 
-    gui.name = "a: max 2x1-5x2"
-    gui.create_figure()
-    gui.solution(2, -5, 0, 2)
+    # gui.name = "a: max 2x1-5x2"
+    # gui.create_figure()
+    # gui.solution(2, -5, 0, 2)
     # gui.plt.savefig("img/exerc01-a.png", dpi="figure")
-
-    gui.name = "b: max 2x1-4x2"
-    gui.create_figure()
-    gui.solution(2, -4, 0, 3)
-    # gui.plt.savefig("img/exerc01-b.png", dpi="figure")
-
-    gui.name = "c: max 2x1-3x2"
-    gui.create_figure()
-    gui.solution(2, -3, 0, 20, legend=False)
-    # gui.plt.savefig("img/exerc01-c.png", dpi="figure")
 
     gui.show()
