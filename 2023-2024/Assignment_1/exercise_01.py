@@ -38,14 +38,26 @@ class Gui(LinearGUI):
     def solution(self, a, b, minlim, maxlim, legend=True):
 
         line_l3 = [l for l in self.lines if l.name == "l2"][0]
-        extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
+        # extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim, step=0.5)]
+        line_yaxis = [l for l in self.lines if l.name == "y-axis"][0]
+        step = 0.5
+        # step = 1
+        counter = minlim
+        while counter < maxlim:
+            extra = line(a, b, counter, "extra")
+            extra.legend_show = False
+            extra.plot(self.xAxis, "cornflowerblue")
+            # extra.legend_show = True
+            extra.intersection(line_l3)
+            line_yaxis.intersection(extra)
+            counter += step
 
-        for lin in extra_lines:
-            lin.legend_show = False
-            lin.plot(self.xAxis, "cornflowerblue")
-            lin.legend_show = True
+            # for lin in extra_lines:
+            # lin.legend_show = False
+            # lin.plot(self.xAxis, "cornflowerblue")
+            # lin.legend_show = True
 
-            lin.intersection(line_l3)
+            # lin.intersection(line_l3)
 
 
 def main():
@@ -54,10 +66,15 @@ def main():
     # gui.create_figure()
     # gui.plt.savefig("img/exerc01_a.png", dpi="figure")
 
-    gui.name = "Z: min 2x1-x2"
+    # gui.name = "Z: min 2x1-x2"
+    # gui.create_figure()
+    # gui.solution(2, -1, -12, -9)
+    # gui.plt.savefig("img/exerc01_a_2.png", dpi="figure")
+
+    gui.name = "Z: min 11x1-x2"
     gui.create_figure()
-    gui.solution(2, -1, -13, -8)
-    gui.plt.savefig("img/exerc01_a_2.png", dpi="figure")
+    gui.solution(11, -1, -13, -8)
+    gui.plt.savefig("img/exerc01_b.png", dpi="figure")
 
     gui.show()
 
