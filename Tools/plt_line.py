@@ -67,6 +67,9 @@ class line:
     def plot(self, x, color=None, lw=2, ms=12):
         """plots the line, and the equation as a label"""
 
+        if self.type == "axis":
+            lw = 1
+
         if self.b == 0:
             plt.axvline(
                 x=self.c / self.a,
