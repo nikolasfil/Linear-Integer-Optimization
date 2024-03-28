@@ -52,10 +52,12 @@ class Gui(LinearGUI):
         self.v.append([self.limit, 0])
         # self.plt.plot(*self.v[-1], "o", color="red")
 
-        # Intersection line 3 and line 2
-        # # self.v.append([self.lines[3](0, reverse=True), 0])
+        # Intersection x_axis and line 4
+
+        # self.v.append([self.lines[3](0, reverse=True), 0])
         # self.plt.plot(*self.v[-1], "o", color="red")
-        self.v.append(self.lines[3].intersection(self.lines[2]))
+        x_axis = [l for l in self.lines if l.name == "x-axis"][0]
+        self.v.append(self.lines[3].intersection(x_axis))
 
         # Intersection line 4 and line 1
         self.v.append(self.lines[0].intersection(self.lines[3]))

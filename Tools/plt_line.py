@@ -34,6 +34,15 @@ class line:
         output = f"{str(self.a if self.a !=1 else '')+'x1' if self.a else ''}{'+' if self.a and self.b>0 else ''}{str(self.b if self.b !=1 else '')+'x2' if self.b else ''} = {self.c}"
         return output
 
+    def __call__(self, x, reverse=False) -> float:
+        if reverse:
+            return self.reverse_equation(x)
+        return self.equation(x)
+
+    def reverse_equation(self, y):
+        """returns the x value of the line for a given y value"""
+        return (-self.b * y + self.c) / self.a
+
     def intersection(self, line, plotting=True):
         """returns the intersection point of two lines, and plots it if plotting is True"""
 
