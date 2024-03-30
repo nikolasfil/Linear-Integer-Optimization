@@ -99,32 +99,37 @@ class Exercise01:
 
     def feasible_region(self):
         self.gui.create_figure()
-        image_file = Path(self.img_folder, "exerc01_a.png")
-        self.gui.plt.savefig(image_file, dpi="figure")
+        self.save_image("exerc01_a.png")
 
     def exerc01_a(self):
         self.gui.name = "Z: min 2x1-x2"
         self.gui.create_figure()
         self.gui.solution(2, -1, -25, 5)
-        image_file = Path(self.img_folder, "exerc01_a_1.png")
-        self.gui.plt.savefig(image_file, dpi="figure")
+        self.save_image("exerc01_a_1.png")
 
     def exerc01_b(self):
         self.gui.name = "Z: min 11x1-x2"
         self.gui.create_figure()
         self.gui.step = 5
         self.gui.solution(11, -1, -15, 5)
-        image_file = Path(self.img_folder, "exerc01_b.png")
-        self.gui.plt.savefig(image_file, dpi="figure")
+        self.save_image("exerc01_b.png")
+
+    def exerc01_c(self):
+        self.gui.name = "Z: min c1x1-x2"
+        self.gui.create_figure()
+        self.gui.step = 5
+        self.gui.solution(11, -1, -15, 5)
+        self.save_image("exerc01_c.png")
 
 
 def main():
     gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
 
-    exerc01 = Exercise01(gui=gui)
+    exerc01 = Exercise01(gui=gui, save_images=True)
     # exerc01.feasible_region()
     # exerc01.exerc01_a()
     # exerc01.exerc01_b()
+    exerc01.exerc01_c()
 
     gui.show()
 
