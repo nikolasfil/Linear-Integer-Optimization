@@ -24,16 +24,19 @@ class LinearGUI:
 
         self.plt = kwargs.get("plt", plt)
 
-        xAxis = np.linspace(-100, 100, 100000)
-        self.xAxis = kwargs.get("xAxis", xAxis)
-
         self.limit = kwargs.get("limit", 10)
+
+        # xAxis = np.linspace(-100, 100, 100000)
+        xAxis = np.linspace(-10, self.limit + 10, 10)
+        self.xAxis = kwargs.get("xAxis", xAxis)
 
         self.ylim = kwargs.get("ylim", (0, self.limit))
         self.xlim = kwargs.get("xlim", (0, self.limit))
 
         self.lines = kwargs.get("lines", [])
         self.name = kwargs.get("name", "LinearGUI")
+        self.figsize = kwargs.get("figsize")
+        self.step = kwargs.get("step", 1)
         self.v = []
 
     def show(self):
@@ -92,7 +95,10 @@ class LinearGUI:
     def create_figure(self, name: str = None):
         if name:
             self.name = name
-        plt.figure(self.name)
+        if self.figsize:
+            plt.figure(self.name, figsize=self.figsize)
+        else:
+            plt.figure(self.name)
 
         self.plt.ylim(*self.ylim)
         self.plt.xlim(*self.xlim)

@@ -70,20 +70,18 @@ class Gui(LinearGUI):
 
     def solution(self, a, b, minlim, maxlim, legend=True):
 
-        line_l3 = [l for l in self.lines if l.name == "l2"][0]
+        line_l3 = [l for l in self.lines if l.name == "l3"][0]
         # extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim, step=0.5)]
-        line_yaxis = [l for l in self.lines if l.name == "y-axis"][0]
-        step = 0.5
-        # step = 1
+
         counter = minlim
         while counter < maxlim:
             extra = line(a, b, counter, "extra")
-            extra.legend_show = False
             extra.plot(self.xAxis, "cornflowerblue")
-            # extra.legend_show = True
-            extra.intersection(line_l3)
-            line_yaxis.intersection(extra)
-            counter += step
+            extra.legend_show = False
+            extra.intersection(line_l3, plotting=False)
+            line_l3.legend_show = False
+            line_l3.intersection(extra)
+            counter += self.step
 
             # for lin in extra_lines:
             # lin.legend_show = False
@@ -93,21 +91,40 @@ class Gui(LinearGUI):
             # lin.intersection(line_l3)
 
 
+class Exercise01:
+    def __init__(self, *args, **kwargs) -> None:
+        self.parent = Path(__file__).parent
+        self.gui = kwargs.get("gui", Gui(plt, name="Feasible Region", figsize=(15, 8)))
+        self.img_folder = Path(Path(__file__).parent, "img")
+
+    def feasible_region(self):
+        self.gui.create_figure()
+        image_file = Path(self.img_folder, "exerc01_a.png")
+        self.gui.plt.savefig(image_file, dpi="figure")
+
+    def exerc01_a(self):
+        self.gui.name = "Z: min 2x1-x2"
+        self.gui.create_figure()
+        self.gui.solution(2, -1, -25, 5)
+        image_file = Path(self.img_folder, "exerc01_a_1.png")
+        self.gui.plt.savefig(image_file, dpi="figure")
+
+    def exerc01_b(self):
+        self.gui.name = "Z: min 11x1-x2"
+        self.gui.create_figure()
+        self.gui.step = 5
+        self.gui.solution(11, -1, -25, 5)
+        image_file = Path(self.img_folder, "exerc01_b.png")
+        self.gui.plt.savefig(image_file, dpi="figure")
+
+
 def main():
+    gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
 
-    gui = Gui(plt, name="Feasible Region")
-    gui.create_figure()
-    # gui.plt.savefig("img/exerc01_a.png", dpi="figure")
-
-    # gui.name = "Z: min 2x1-x2"
-    # gui.create_figure()
-    # gui.solution(2, -1, -12, -9)
-    # gui.plt.savefig("img/exerc01_a_2.png", dpi="figure")
-
-    # gui.name = "Z: min 11x1-x2"
-    # gui.create_figure()
-    # gui.solution(11, -1, -13, -8)
-    # gui.plt.savefig("img/exerc01_b.png", dpi="figure")
+    exerc01 = Exercise01(gui=gui)
+    # exerc01.feasible_region()
+    # exerc01.exerc01_a()
+    exerc01.exerc01_b()
 
     gui.show()
 
