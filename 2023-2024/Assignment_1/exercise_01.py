@@ -78,17 +78,8 @@ class Gui(LinearGUI):
             extra = line(a, b, counter, "extra")
             extra.plot(self.xAxis, "cornflowerblue")
             extra.legend_show = False
-            extra.intersection(line_l3, plotting=False)
-            line_l3.legend_show = False
-            line_l3.intersection(extra)
+            # extra.intersection(line_l3, plotting=False)
             counter += self.step
-
-            # for lin in extra_lines:
-            # lin.legend_show = False
-            # lin.plot(self.xAxis, "cornflowerblue")
-            # lin.legend_show = True
-
-            # lin.intersection(line_l3)
 
 
 class Exercise01:
