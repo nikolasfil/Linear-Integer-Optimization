@@ -71,6 +71,7 @@ class Gui(LinearGUI):
     def solution(self, a, b, minlim, maxlim, legend=True):
 
         line_l3 = [l for l in self.lines if l.name == "l3"][0]
+        line_l1 = [l for l in self.lines if l.name == "l1"][0]
         # extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim, step=0.5)]
 
         counter = minlim
@@ -78,15 +79,23 @@ class Gui(LinearGUI):
             extra = line(a, b, counter, "extra")
             extra.plot(self.xAxis, "cornflowerblue")
             extra.legend_show = False
-            # extra.intersection(line_l3, plotting=False)
+            extra.intersection(line_l3)
+            extra.intersection(line_l1)
             counter += self.step
 
 
 class Exercise01:
     def __init__(self, *args, **kwargs) -> None:
-        self.parent = Path(__file__).parent
         self.gui = kwargs.get("gui", Gui(plt, name="Feasible Region", figsize=(15, 8)))
-        self.img_folder = Path(Path(__file__).parent, "img")
+        self.save_images = kwargs.get("save_images", False)
+
+    def save_image(self, file_name):
+        if self.save_images:
+            parent = Path(__file__).parent
+            img_folder = Path(parent, "img")
+
+            image_file = Path(img_folder, file_name)
+            self.gui.plt.savefig(image_file, dpi="figure")
 
     def feasible_region(self):
         self.gui.create_figure()
@@ -104,7 +113,7 @@ class Exercise01:
         self.gui.name = "Z: min 11x1-x2"
         self.gui.create_figure()
         self.gui.step = 5
-        self.gui.solution(11, -1, -25, 5)
+        self.gui.solution(11, -1, -15, 5)
         image_file = Path(self.img_folder, "exerc01_b.png")
         self.gui.plt.savefig(image_file, dpi="figure")
 
@@ -115,7 +124,7 @@ def main():
     exerc01 = Exercise01(gui=gui)
     # exerc01.feasible_region()
     # exerc01.exerc01_a()
-    exerc01.exerc01_b()
+    # exerc01.exerc01_b()
 
     gui.show()
 
