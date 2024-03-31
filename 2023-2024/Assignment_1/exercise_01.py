@@ -23,6 +23,7 @@ class Gui(LinearGUI):
         # self.lines.append(line(10, -1, -10, "l2", type="line"))
         self.lines.append(line(-4, 1, 20, "l3", type="line"))
         self.lines.append(line(1, 4, 20, "l4", type="line"))
+
         # self.lines.append(line(11, -1, (11 * 1.67 - 26.67), "l7", type="line"))
         # self.lines.append(line(11, -1, (-8.5), "l8", type="line"))
 
@@ -116,9 +117,22 @@ class Exercise01:
 
     def exerc01_c(self):
         self.gui.name = "Z: min c1x1-x2"
+        # self.gui.lines.append()
+
+        # Checks if the lines are the same
+
+        top = self.gui.lines[0].intersection(self.gui.lines[3], plotting=False)
+        self.gui.lines.append(line(-1.5, -1, -10, "l1_2", type="line"))
+        self.gui.lines.append(line(-0.1, -1, -5, "l4_2", type="line"))
+
+        # print(c_0_25(top[0]), top[1])
+        # print(c_1(top[0]), top[1])
+
+        # self.gui.lines.append(extra_line)
+        # self.gui.lines.append(extra_line2)
         self.gui.create_figure()
-        self.gui.step = 5
-        self.gui.solution(11, -1, -15, 5)
+        # self.gui.step = 5
+        # self.gui.solution(, -1, -15, 5)
         self.save_image("exerc01_c.png")
 
 
@@ -129,6 +143,7 @@ def main():
     # exerc01.feasible_region()
     # exerc01.exerc01_a()
     # exerc01.exerc01_b()
+    # exerc01.save_images = False
     exerc01.exerc01_c()
 
     gui.show()
