@@ -144,7 +144,7 @@ def main():
     # exerc01.exerc01_a()
     # exerc01.exerc01_b()
     # exerc01.save_images = False
-    exerc01.exerc01_c()
+    # exerc01.exerc01_c()
 
     gui.show()
 
