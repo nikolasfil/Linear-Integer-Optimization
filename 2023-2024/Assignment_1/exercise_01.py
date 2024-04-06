@@ -111,22 +111,22 @@ class Gui(LinearGUI):
         # self.solution(, -1, -15, 5)
         self.save_image("exerc01_c.png")
 
+    def main(self):
+        # gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
 
-def main():
-    gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
-
-    gui.save_images = False
-    gui.feasible_region()
-    gui.exerc01_a()
-    gui.exerc01_b()
-    gui.exerc01_c()
-
-    gui.show()
+        self.save_images = False
+        self.feasible_region()
+        self.exerc01_a()
+        self.exerc01_b()
+        self.exerc01_c()
+        self.show()
 
 
 if __name__ == "__main__":
     try:
-        main()
+        # main()
+        gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
+        gui.main()
     except KeyboardInterrupt:
         pass
     except Exception as e:
