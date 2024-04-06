@@ -9,7 +9,7 @@ from Tools.plt_line import line
 from Tools.linearGui import LinearGUI
 
 
-class Gui(LinearGUI):
+class Exerc01Gui(LinearGUI):
     def __init__(self, *args, **kwargs) -> None:
         limit = 30
 
@@ -112,7 +112,6 @@ class Gui(LinearGUI):
         self.save_image("exerc01_c.png")
 
     def main(self):
-        # gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
 
         self.save_images = False
         self.feasible_region()
@@ -124,8 +123,7 @@ class Gui(LinearGUI):
 
 if __name__ == "__main__":
     try:
-        # main()
-        gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
+        gui = Exerc01Gui(plt, name="Feasible Region", figsize=(15, 8))
         gui.main()
     except KeyboardInterrupt:
         pass
