@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.colors as mcolors
 import sys
 from pathlib import Path
+from shapely.geometry.polygon import Polygon
+from shapely.geometry import Point
 
 sys.path.append(str(Path(__file__).parents[1]))
 from Tools.plt_line import line
@@ -105,3 +107,8 @@ class LinearGUI:
         self.plt.grid()
         self.plot_equations()
         self.fill_feasible()
+
+    def check_feasible_point(self, points):
+        p = Point(points)
+        polygon = Polygon(self.v)
+        return polygon.contains(p)

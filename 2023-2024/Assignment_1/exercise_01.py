@@ -71,8 +71,8 @@ class Gui(LinearGUI):
 
     def solution(self, a, b, minlim, maxlim, legend=True):
 
-        line_l3 = [l for l in self.lines if l.name == "l3"][0]
-        line_l1 = [l for l in self.lines if l.name == "l1"][0]
+        # line_l3 = [l for l in self.lines if l.name == "l3"][0]
+        # line_l1 = [l for l in self.lines if l.name == "l1"][0]
         # extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim, step=0.5)]
 
         counter = minlim
@@ -80,8 +80,10 @@ class Gui(LinearGUI):
             extra = line(a, b, counter, "extra")
             extra.plot(self.xAxis, "cornflowerblue")
             extra.legend_show = False
-            extra.intersection(line_l3)
-            extra.intersection(line_l1)
+            for l in self.lines:
+                possible = extra.intersection(l, plotting=False)
+                if possible and self.check_feasible_point(possible):
+                    extra.intersection(l)
             counter += self.step
 
 
@@ -140,10 +142,10 @@ def main():
     gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
 
     exerc01 = Exercise01(gui=gui, save_images=True)
+    exerc01.save_images = False
     # exerc01.feasible_region()
     # exerc01.exerc01_a()
-    # exerc01.exerc01_b()
-    # exerc01.save_images = False
+    exerc01.exerc01_b()
     # exerc01.exerc01_c()
 
     gui.show()
