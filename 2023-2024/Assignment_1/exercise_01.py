@@ -71,56 +71,49 @@ class Gui(LinearGUI):
             img_folder = Path(parent, "img")
 
             image_file = Path(img_folder, file_name)
-            self.gui.plt.savefig(image_file, dpi="figure")
+            self.plt.savefig(image_file, dpi="figure")
 
     def feasible_region(self):
-        self.gui.create_figure()
+        self.create_figure()
         self.save_image("exerc01_a.png")
 
     def exerc01_a(self):
-        self.gui.name = "Z: min 2x1-x2"
-        self.gui.create_figure()
-        self.gui.step = 5
-        self.gui.graphical_solution(2, -1, -25, 5)
+        self.name = "Z: min 2x1-x2"
+        self.create_figure()
+        self.step = 5
+        self.graphical_solution(2, -1, -25, 5)
         self.save_image("exerc01_a_1.png")
 
     def exerc01_b(self):
-        self.gui.name = "Z: min 11x1-x2"
-        self.gui.create_figure()
-        self.gui.step = 5
-        self.gui.graphical_solution(11, -1, -15, 5)
+        self.name = "Z: min 11x1-x2"
+        self.create_figure()
+        self.step = 5
+        self.graphical_solution(11, -1, -15, 5)
         self.save_image("exerc01_b.png")
 
     def exerc01_c(self):
-        self.gui.name = "Z: min c1x1-x2"
-        # self.gui.lines.append()
+        self.name = "Z: min c1x1-x2"
+        # self.lines.append()
 
         # Checks if the lines are the same
 
-        top = self.gui.lines[0].intersection(self.gui.lines[3], plotting=False)
-        self.gui.lines.append(line(-1.5, -1, -10, "l1_2", type="line"))
-        self.gui.lines.append(line(-0.1, -1, -5, "l4_2", type="line"))
+        top = self.lines[0].intersection(self.lines[3], plotting=False)
+        self.lines.append(line(-1.5, -1, -10, "l1_2", type="line"))
+        self.lines.append(line(-0.1, -1, -5, "l4_2", type="line"))
 
         # print(c_0_25(top[0]), top[1])
         # print(c_1(top[0]), top[1])
 
-        # self.gui.lines.append(extra_line)
-        # self.gui.lines.append(extra_line2)
-        self.gui.create_figure()
-        # self.gui.step = 5
-        # self.gui.solution(, -1, -15, 5)
+        # self.lines.append(extra_line)
+        # self.lines.append(extra_line2)
+        self.create_figure()
+        # self.step = 5
+        # self.solution(, -1, -15, 5)
         self.save_image("exerc01_c.png")
 
 
 def main():
     gui = Gui(plt, name="Feasible Region", figsize=(15, 8))
-
-    # exerc01 = Exercise01(gui=gui, save_images=True)
-    # exerc01.save_images = False
-    # exerc01.feasible_region()
-    # exerc01.exerc01_a()
-    # exerc01.exerc01_b()
-    # exerc01.exerc01_c()
 
     gui.save_images = False
     gui.feasible_region()
