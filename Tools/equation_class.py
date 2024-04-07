@@ -1,13 +1,13 @@
 class equation:
     def __init__(self, *args, **kwargs):
         self.name = kwargs.get("name", "equation")
-        self.coefficients = args
-        self.c = self.coefficients[-1]
+        self.coefficients = args[:-1]
+        self.c = args[-1]
 
     def __str__(self):
         output = []
 
-        for i, coef in enumerate(self.coefficients[:-1]):
+        for i, coef in enumerate(self.coefficients):
             temp = f"{str(coef) if coef != 1 else ''}x{i+1}"
             output.append(temp)
 
@@ -26,7 +26,7 @@ class equation:
         return self.equation(*args)
 
     def equation(self, *args):
-        return sum([coef * x for coef, x in zip(self.coefficients[:-1], args)])
+        return sum([coef * x for coef, x in zip(self.coefficients, args)])
 
 
 if __name__ == "__main__":
