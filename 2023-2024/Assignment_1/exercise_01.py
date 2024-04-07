@@ -1,6 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import matplotlib.colors as mcolors
 import sys
 from pathlib import Path
 
@@ -60,11 +58,6 @@ class Exerc01Gui(LinearGUI):
     def standard_feasible_points(self):
         pass
 
-    # class Exercise01:
-    #     def __init__(self, *args, **kwargs) -> None:
-    #         self.gui = kwargs.get("gui", Gui(plt, name="Feasible Region", figsize=(15, 8)))
-    #         self.save_images = kwargs.get("save_images", False)
-
     def save_image(self, file_name):
         if self.save_images:
             parent = Path(__file__).parent
@@ -93,7 +86,6 @@ class Exerc01Gui(LinearGUI):
 
     def exerc01_c(self):
         self.name = "Z: min c1x1-x2"
-        # self.lines.append()
 
         # Checks if the lines are the same
 
@@ -101,11 +93,6 @@ class Exerc01Gui(LinearGUI):
         self.lines.append(line(-1.5, -1, -10, "l1_2", type="line"))
         self.lines.append(line(-0.1, -1, -5, "l4_2", type="line"))
 
-        # print(c_0_25(top[0]), top[1])
-        # print(c_1(top[0]), top[1])
-
-        # self.lines.append(extra_line)
-        # self.lines.append(extra_line2)
         self.create_figure()
         # self.step = 5
         # self.solution(, -1, -15, 5)
@@ -118,7 +105,7 @@ class Exerc01Gui(LinearGUI):
         self.exerc01_a()
         self.exerc01_b()
         self.exerc01_c()
-        self.show()
+        # self.show()
 
 
 if __name__ == "__main__":
