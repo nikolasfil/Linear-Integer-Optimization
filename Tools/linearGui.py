@@ -20,6 +20,7 @@ class LinearGUI:
             ylim (tuple): the y axis limits
             xlim (tuple): the x axis limits
             lines (list): the lines to plot
+            save_images (bool): save the images
             v (list): the feasible points
             name (str): the name of the graph
         """
@@ -39,6 +40,8 @@ class LinearGUI:
         self.name = kwargs.get("name", "LinearGUI")
         self.figsize = kwargs.get("figsize")
         self.step = kwargs.get("step", 1)
+        self.save_images = kwargs.get("save_images", False)
+
         self.v = []
 
     def show(self):
@@ -91,9 +94,6 @@ class LinearGUI:
         # Fill takes the x and y of a polygon and fills it with color
         self.plt.fill(x, y, color="gray", alpha=0.5)
 
-    def solution(self, a, b, minlim, maxlim, legend=True):
-        """plots the extra lines of the objective function"""
-
     def create_figure(self, name: str = None):
         if name:
             self.name = name
@@ -112,3 +112,26 @@ class LinearGUI:
         p = Point(points)
         polygon = Polygon(self.v)
         return polygon.contains(p)
+
+    def intersections_in_feasible(self, extra):
+        for l in self.lines:
+            possible = extra.intersection(l, plotting=False)
+            if self.check_feasible_point(possible):
+                extra.intersection(l)
+
+    def graphical_solution(self, a, b, minlim, maxlim, legend=True):
+
+        counter = minlim
+        while counter < maxlim:
+            extra = line(a, b, counter, "extra")
+            extra.plot(self.xAxis, "cornflowerblue")
+            extra.legend_show = False
+            self.intersections_in_feasible(extra)
+            counter += self.step
+
+    def save_image(self, file_name):
+        if self.save_images:
+            img_folder = Path(self.parent, "img")
+
+            image_file = Path(img_folder, file_name)
+            self.plt.savefig(image_file, dpi="figure")

@@ -33,7 +33,7 @@ class Gui(LinearGUI):
 
         self.v.append(self.lines[2].intersection(right_limit, plotting=False))
 
-    def solution(self, a, b, minlim, maxlim, legend=True):
+    def graphical_solution(self, a, b, minlim, maxlim, legend=True):
         """plots the extra lines of the objective function"""
         extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
 
@@ -54,17 +54,17 @@ if __name__ == "__main__":
 
     gui.name = "a: max 2x1-5x2"
     gui.create_figure()
-    gui.solution(2, -5, 0, 2)
+    gui.graphical_solution(2, -5, 0, 2)
     # gui.plt.savefig("img/exerc01-a.png", dpi="figure")
 
     gui.name = "b: max 2x1-4x2"
     gui.create_figure()
-    gui.solution(2, -4, 0, 3)
+    gui.graphical_solution(2, -4, 0, 3)
     # gui.plt.savefig("img/exerc01-b.png", dpi="figure")
 
     gui.name = "c: max 2x1-3x2"
     gui.create_figure()
-    gui.solution(2, -3, 0, 20, legend=False)
+    gui.graphical_solution(2, -3, 0, 20, legend=False)
     # gui.plt.savefig("img/exerc01-c.png", dpi="figure")
 
     gui.show()

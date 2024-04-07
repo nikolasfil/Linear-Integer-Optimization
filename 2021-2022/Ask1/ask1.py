@@ -48,7 +48,7 @@ class Gui(LinearGUI):
     def standard_feasible_points(self):
         pass
 
-    def solution(self, a, b, minlim, maxlim, legend=True):
+    def graphical_solution(self, a, b, minlim, maxlim, legend=True):
         """plots the extra lines of the objective function"""
         extra_lines = [line(a, b, i, "extra") for i in range(minlim, maxlim)]
 

@@ -39,9 +39,9 @@ class line:
             return self.reverse_equation(x)
         return self.equation(x)
 
-    def reverse_equation(self, y):
-        """returns the x value of the line for a given y value"""
-        return (-self.b * y + self.c) / self.a
+    # def reverse_equation(self, y):
+    #     """returns the x value of the line for a given y value"""
+    #     return (-self.b * y + self.c) / self.a
 
     def intersection(self, line, plotting=True):
         """returns the intersection point of two lines, and plots it if plotting is True"""
@@ -52,8 +52,21 @@ class line:
             # print(f'{self.name} and {line.name} are parallel')
             return None
 
-        x = x_up / x_down
-        y = self.equation(x)
+        # ax+by=c
+        # y = (c-ax)/b
+        # x = (c-by)/a
+        # with b = 0 : x = c/a
+        # with a = 0 : y = c/b
+
+        if self.b == 0:
+            x = self.c / self.a
+            y = line.equation(x)
+        elif line.b == 0:
+            x = line.c / line.a
+            y = self.equation(x)
+        else:
+            x = x_up / x_down
+            y = self.equation(x)
 
         if plotting:
             plt.plot(
@@ -61,17 +74,20 @@ class line:
             )
             if self.legend_show:
                 plt.legend()
+
         return [x, y]
 
     def equation(self, x):
         """returns the y value of the line for a given x value"""
         if self.b != 0:
             return (-self.a * x + self.c) / self.b
-        return 0
+        return self.c / self.a
 
     def reverse_equation(self, y):
         """returns the x value of the line for a given y value"""
-        return (-self.b * y + self.c) / self.a
+        if self.a != 0:
+            return (-self.b * y + self.c) / self.a
+        return self.c / self.b
 
     def plot(self, x, color=None, lw=2, ms=12):
         """plots the line, and the equation as a label"""
@@ -82,6 +98,14 @@ class line:
         if self.b == 0:
             plt.axvline(
                 x=self.c / self.a,
+                label=f"{self.name}: {self}",
+                color=self.auto_color_chooser(color),
+                linewidth=lw,
+                markersize=ms,
+            )
+        elif self.a == 0:
+            plt.axhline(
+                y=self.c / self.b,
                 label=f"{self.name}: {self}",
                 color=self.auto_color_chooser(color),
                 linewidth=lw,
