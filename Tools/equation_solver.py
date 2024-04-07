@@ -11,6 +11,7 @@ class EquationSolver:
 
     def checker(self, *args):
         results = [eq(*args) <= eq.c for eq in self.equations]
+        results.extend(item >= 0 for item in args)
         return all(results)
 
     def main(self):
