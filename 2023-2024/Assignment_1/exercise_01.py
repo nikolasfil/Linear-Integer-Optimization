@@ -105,7 +105,7 @@ class Exerc01Gui(LinearGUI):
         self.exerc01_a()
         self.exerc01_b()
         self.exerc01_c()
-        # self.show()
+        self.show()
 
 
 if __name__ == "__main__":
