@@ -86,7 +86,7 @@ class LinearGUI:
 
         self.find_feasible_points()
 
-        print(self.v)
+        # print(self.v)
         # Create the x and y Coordinates for the fill area
         x = [i[0] for i in self.v]
         y = [i[1] for i in self.v]
