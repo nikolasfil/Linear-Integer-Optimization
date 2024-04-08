@@ -17,18 +17,7 @@ class Exerc06(SimplexSolver):
         b = np.array([24, 36])
         c = np.array([5, 4, -1, 3])
 
-        # A = np.array(
-        #     [
-        #         [1, 2, 3, 1, 0, 0],
-        #         [3, 1, 2, 0, 1, 0],
-        #         [2, 3, 1, 0, 0, 1],
-        #     ]
-        # )
-        # b = np.array([2, 2, 4])
-        # c = np.array([-1, -4, -5, 0, 0, 0])
-
-        simplex = SimplexSolver(A=A, b=b, c=c)
-        simplex.parent = self.parent
+        simplex = SimplexSolver(A=A, b=b, c=c, parent=self.parent)
         simplex.solve()
 
 
