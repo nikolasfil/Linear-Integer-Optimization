@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 from itertools import combinations
 from scipy.special import binom
+import numpy as np
 
 sys.path.append(str(Path(__file__).parent))
 from equation_class import equation
@@ -57,6 +58,27 @@ class EquationSolver:
         n = len(self.equations[0].coefficients)
 
         self.combs = [x for x in combinations(self.equations, n)]
+
+    def get_system_solution(self, system: list):
+        a = np.array([eq.coefficients for eq in system])
+        b = np.array([eq.b for eq in system])
+
+        # a = np.array([np.array(eq.coefficients) for eq in system])
+        # b = np.array([np.array(eq.b) for eq in system])
+
+        # if np.linalg.matrix_rank(a) != len(a):
+        #     return None
+        #     # raise ValueError("The system is not solvable")
+        # if np.linalg.det(b) == 0:
+        #     return None
+        #     # raise ValueError("The system is not solvable")
+
+        try:
+            result = np.linalg.solve(a, b)
+        except np.linalg.LinAlgError:
+            return None
+
+        return result
 
     def tops(self):
         # get the different combinations of the equations
