@@ -91,7 +91,13 @@ class EquationSolver:
         # Compute the result of the system of equations
         result = np.linalg.solve(a, b)
 
-        return result
+        # Saving the variables that were used
+        result_all_var = np.zeros((len(self.equations)))
+
+        # Assign values to the variables that were used in the correct order
+        result_all_var[system] = result
+
+        return result_all_var
 
     def get_peak_points(self, system, viable_solution):
 
@@ -101,11 +107,14 @@ class EquationSolver:
         variables = len(self.equations) - len(self.equations[0].coefficients)
 
     def tops(self):
-        # get the different combinations of the equations
-        # get the results of those intersections and see with the checker if they are feasible
-        # return the feasible points
-        # Also print them somewhere to keep track for the report
-        pass
+        self.get_combinations()
+        num_of_vars = len(self.equations[0].coefficients)
+        for lis in self.combos:
+            solution = self.get_system_solution(lis)
+            if solution is not None:
+                print(
+                    f"{'-'*10}\n{solution} | {self.checker(*solution[:num_of_vars])}\n{'-'*10}"
+                )
 
     def main(self):
         pass
