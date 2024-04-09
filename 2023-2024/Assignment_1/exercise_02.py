@@ -8,20 +8,20 @@ from exercise_02_b_2 import Exerc2Gui_b_2
 
 if __name__ == "__main__":
     try:
-        gui = Exerc2Gui_a(
+        gui_1 = Exerc2Gui_a(
             plt, name="Feasible Region", figsize=(15, 8), save_images=True
         )
-        gui.main()
+        gui_1.main()
 
-        gui = Exerc2Gui_b_1(
+        gui_2 = Exerc2Gui_b_1(
             plt, name="Feasible Region", figsize=(15, 8), save_images=True
         )
-        gui.main()
+        gui_2.main()
 
-        gui = Exerc2Gui_b_2(
+        gui_3 = Exerc2Gui_b_2(
             plt, name="Feasible Region", figsize=(15, 8), save_images=True
         )
-        gui.main()
+        gui_3.main()
     except KeyboardInterrupt:
         pass
     except Exception as e:

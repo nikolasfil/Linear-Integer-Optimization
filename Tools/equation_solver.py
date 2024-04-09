@@ -21,6 +21,7 @@ class EquationSolver:
         self.coefficients = kwargs.get("coefficients", [])
         self.current_system = None
         self.build_all_equations()
+        self.parent = kwargs.get("parent", Path(__file__).parent)
 
     def build_all_equations(self):
         if self.equations:
@@ -138,6 +139,23 @@ class EquationSolver:
                 )
 
     def str_single(self, *args, **kwargs):
+        """
+        Description:
+            Returns the string representation of the solution
+
+        Args:
+            *args: list
+                The solution to be printed
+            **kwargs: dict
+                solution: list
+                    The solution to be printed
+                combo: list
+                    The indexes of the equations that were used to solve the system
+
+        Returns:
+            str: The string representation of the solution
+        """
+
         if args:
             solution = args[0]
         else:
@@ -145,12 +163,22 @@ class EquationSolver:
         output = []
 
         equations_combos = kwargs.get("combo", None)
+        ind = kwargs.get("ind", "")
 
         if solution is not None:
 
-            temp_aknowledge = f"| Solution: {solution} | Feasible:  {self.checker(*solution[:self.num_coefficients])} |"
-            length = len(temp_aknowledge)
+            # temp_aknowledge = f"| Solution: {solution} | Feasible:  {self.checker(*solution[:self.num_coefficients])} |"
 
+            # Creates a string for the solution.
+            solution_ack = f"| Solution {ind}: {str(solution).replace(' ',' ').replace('  ',' ').replace('   ',' ')} |"
+            solution_ack += (
+                f" Feasible:  {self.checker(*solution[:self.num_coefficients])} |"
+            )
+
+            # Get the length of the solution string to prettify the output
+            length = len(solution_ack)
+
+            # If the equation combo is provided it will be printed
             if equations_combos:
 
                 equations = [str(self.equations[i]) for i in equations_combos]
@@ -164,23 +192,45 @@ class EquationSolver:
                 output.append("\n".join(equations))
 
             output.append("-" * max_length)
-            output.append(temp_aknowledge)
+            output.append(solution_ack)
             output.append("-" * max_length + "\n")
 
         return "\n".join(output)
+
+    def feasible_tops(self):
+        self.get_combinations()
+        output = []
+        for i, lis in enumerate(self.combos):
+
+            # Get the solution of the system
+            solution = self.get_system_solution(lis)
+
+            # Check if the solution exists
+            if solution is not None:
+                # If it exists, it will be printed
+                if self.checker(*solution[: self.num_coefficients]):
+                    output.append(f"Solution {i} : {solution} | Feasible: True")
+
+        print("\n".join(output))
 
     def main(self):
 
         self.get_combinations()
         output = []
-        for lis in self.combos:
+        for i, lis in enumerate(self.combos):
 
+            # Get the solution of the system
             solution = self.get_system_solution(lis)
 
+            # Check if the solution exists
             if solution is not None:
-                output.append(self.str_single(solution, combo=lis))
+                # If it exists, it will be printed
+                output.append(self.str_single(solution, combo=lis, ind=i))
 
         print("\n".join(output))
+        file = Path(self.parent, "output_exerc_05_a.txt")
+        with open(file, "w") as f:
+            f.write("\n".join(output))
 
 
 if __name__ == "__main__":
@@ -191,7 +241,6 @@ if __name__ == "__main__":
         ]
         eq = EquationSolver(coefficients=coef)
         eq.main()
-        # print(eq.checker(1, 1, 1))
 
     except KeyboardInterrupt:
         pass
