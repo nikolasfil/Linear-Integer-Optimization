@@ -47,6 +47,9 @@ class EquationSolver:
 
         self.equations = np.array(self.equations)
 
+        self.num_coefficients = len(self.equations[0].coefficients)
+        self.num_equations = len(self.equations)
+
     def checker(self, *args):
         results = []
         for eq in self.equations:
@@ -58,20 +61,39 @@ class EquationSolver:
         return all(results)
 
     def number_of_tops(self):
-        n = len(self.equations[0].coefficients)
-        m = len(self.equations)
+        """
+        Description:
+            Returns the number of tops that can be found using bionomial theorem
+        Returns:
+            int: The number of tops that can be found
+        """
+
         # In the constraints we also have that x_i >= 0
-        return binom(n + m, m)
+        return binom(self.num_coefficients + self.num_equations, self.num_equations)
 
     def get_combinations(self):
-        n = len(self.equations[0].coefficients)
-        m = len(self.equations)
-        self.combination_index = list(range(m))
-        self.combos = [x for x in combinations(self.combination_index, n)]
+        """
+        Description:
+            Get the combinations of the equations that can be used to solve the system using itertools combination
+        """
+        self.num_coefficients = len(self.equations[0].coefficients)
+        self.num_equations = len(self.equations)
+        self.combination_index = list(range(self.num_equations))
+        self.combos = [
+            x for x in combinations(self.combination_index, self.num_coefficients)
+        ]
 
     def get_system_solution(self, system: list):
-        # a = np.array([eq.coefficients for eq in system])
-        # b = np.array([eq.b for eq in system])
+        """
+        Description:
+            Get the solution of the system of equations given the indexes of the equations to be used
+
+        Args:
+            system (list): The indexes of the equations to be used
+
+        Returns:
+            list: The solutions of the system equations or None if it's not solvable
+        """
 
         # System, contains the indexes of the equations that were chosen
         system = np.array(system)
@@ -105,13 +127,6 @@ class EquationSolver:
 
         return result_all_var
 
-    def get_peak_points(self, system, viable_solution):
-
-        x = np.zeros((len(self.equations)))
-
-        # number of variables without slack
-        variables = len(self.equations) - len(self.equations[0].coefficients)
-
     def tops(self):
         self.get_combinations()
         num_of_vars = len(self.equations[0].coefficients)
@@ -122,8 +137,50 @@ class EquationSolver:
                     f"{'-'*10}\n{solution} | {self.checker(*solution[:num_of_vars])}\n{'-'*10}"
                 )
 
+    def str_single(self, *args, **kwargs):
+        if args:
+            solution = args[0]
+        else:
+            solution = kwargs.get("solution", None)
+        output = []
+
+        equations_combos = kwargs.get("combo", None)
+
+        if solution is not None:
+
+            temp_aknowledge = f"| Solution: {solution} | Feasible:  {self.checker(*solution[:self.num_coefficients])} |"
+            length = len(temp_aknowledge)
+
+            if equations_combos:
+
+                equations = [str(self.equations[i]) for i in equations_combos]
+                lengths = [len(eq) + 4 for eq in equations]
+                lengths.append(length)
+                max_length = max(lengths)
+
+                output.append("-" * max_length)
+
+                equations = [f"| {eq:^{max_length-4}} |" for eq in equations]
+                output.append("\n".join(equations))
+
+            output.append("-" * max_length)
+            output.append(temp_aknowledge)
+            output.append("-" * max_length + "\n")
+
+        return "\n".join(output)
+
     def main(self):
-        pass
+
+        self.get_combinations()
+        output = []
+        for lis in self.combos:
+
+            solution = self.get_system_solution(lis)
+
+            if solution is not None:
+                output.append(self.str_single(solution, combo=lis))
+
+        print("\n".join(output))
 
 
 if __name__ == "__main__":
@@ -134,7 +191,7 @@ if __name__ == "__main__":
         ]
         eq = EquationSolver(coefficients=coef)
         eq.main()
-        print(eq.checker(1, 1, 1))
+        # print(eq.checker(1, 1, 1))
 
     except KeyboardInterrupt:
         pass

@@ -9,7 +9,8 @@ from Tools.equation_solver import EquationSolver
 class Exerc05(EquationSolver):
 
     def main(self):
-        self.tops()
+        # self.tops()
+        super().main()
 
     #     # for eq in self.equations:
     #     #     print(eq)
