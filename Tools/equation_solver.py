@@ -48,7 +48,13 @@ class EquationSolver:
         self.equations = np.array(self.equations)
 
     def checker(self, *args):
-        results = [eq(*args) <= eq.b for eq in self.equations]
+        results = []
+        for eq in self.equations:
+            if eq.name.startswith("pos_x"):
+                results.append(eq(*args) >= 0)
+            else:
+                results.append(eq(*args) <= eq.b)
+        # results = [eq(*args) <= eq.b for eq in self.equations]
         return all(results)
 
     def number_of_tops(self):
