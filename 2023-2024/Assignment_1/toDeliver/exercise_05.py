@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).parents[2]))
-from Tools.equation_solver import EquationSolver
+from equation_solver import EquationSolver
 
 
 class Exerc05(EquationSolver):
