@@ -61,60 +61,6 @@ class Exerc2Gui_b_1(LinearGUI):
         self.show()
 
 
-class Exerc2Gui_b_2(LinearGUI):
-    def __init__(self, *args, **kwargs) -> None:
-        limit = 500
-
-        kwargs["limit"] = limit
-        super().__init__(*args, **kwargs)
-        self.lines = []
-        self.lines.append(line(-1, -1, -400, "l1", type="line"))
-        self.lines.append(line(1, 1, 500, "l2", type="line"))
-        self.lines.append(line(0, 1, 250, "l3", type="line"))
-        self.lines.append(line(1, -3, 0, "l4", type="line"))
-        self.lines.append(line(-2, 3, 0, "l5", type="line"))
-
-        self.parent = Path(__file__).parent
-
-    def find_feasible_points(self):
-        # intersection of lines 1 and 5
-        self.v.append(self.lines[0].intersection(self.lines[4]))
-
-        # intersection of lines 5 and 2
-        self.v.append(self.lines[4].intersection(self.lines[1]))
-
-        # intersection of lines 2 and 4
-        self.v.append(self.lines[1].intersection(self.lines[3]))
-
-        # intersection of lines 4 and 1
-        self.v.append(self.lines[3].intersection(self.lines[0]))
-
-    def standard_feasible_points(self):
-        pass
-
-    def feasible_region_1(self):
-        self.create_figure()
-        self.save_image("exerc02_b_2_feasible.png")
-
-    def feasible_region_2(self):
-        self.create_figure()
-        self.save_image("exerc02_b_2_feasible.png")
-
-    def exerc02_b_2(self):
-
-        self.name = "Z: max 3x1+4x2 (b2)"
-        self.create_figure()
-        self.step = 50
-        self.graphical_solution(3, 4, 1500, 1800)
-        self.save_image("exerc02_b_2.png")
-
-    def main(self):
-        self.feasible_region_1()
-        self.exerc02_b_2()
-
-        self.show()
-
-
 if __name__ == "__main__":
     try:
         gui = Exerc2Gui_b_1(
@@ -122,10 +68,6 @@ if __name__ == "__main__":
         )
         gui.main()
 
-        gui = Exerc2Gui_b_2(
-            plt, name="Feasible Region", figsize=(15, 8), save_images=True
-        )
-        gui.main()
     except KeyboardInterrupt:
         pass
     except Exception as e:
