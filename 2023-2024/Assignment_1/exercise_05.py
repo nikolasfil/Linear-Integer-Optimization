@@ -12,10 +12,11 @@ class Exerc05(EquationSolver):
         # for eq in self.equations:
         #     print(eq)
         self.get_combinations()
-        # for lis in self.combs:
-        #     print("----")
-        #     print(self.get_system_solution(lis))
-        #     print("----")
+        for lis in self.combos:
+            print("----")
+            print(lis)
+            print(self.get_system_solution(lis))
+            print("----")
         self.get_peak_points(None, None)
 
 

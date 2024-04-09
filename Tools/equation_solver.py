@@ -19,6 +19,7 @@ class EquationSolver:
         """
         self.equations = kwargs.get("equations", [])
         self.coefficients = kwargs.get("coefficients", [])
+        self.current_system = None
         self.build_all_equations()
 
     def build_all_equations(self):
@@ -44,6 +45,8 @@ class EquationSolver:
 
         self.equations.extend(positive_constraints_eq)
 
+        self.equations = np.array(self.equations)
+
     def checker(self, *args):
         results = [eq(*args) <= eq.b for eq in self.equations]
         return all(results)
@@ -56,22 +59,36 @@ class EquationSolver:
 
     def get_combinations(self):
         n = len(self.equations[0].coefficients)
-
-        self.combs = [x for x in combinations(self.equations, n)]
+        m = len(self.equations)
+        self.combination_index = list(range(m))
+        self.combos = [x for x in combinations(self.combination_index, n)]
 
     def get_system_solution(self, system: list):
         # a = np.array([eq.coefficients for eq in system])
         # b = np.array([eq.b for eq in system])
 
-        a = np.array([np.array(eq.coefficients) for eq in system])
+        # System, contains the indexes of the equations that were chosen
+        system = np.array(system)
+        self.current_system = system
+        # Get a list of the equations chosen
+        equations = list(np.array(self.equations)[system])
+
+        # Build the matrix A, with the coefficients of the equations used
+        a = np.array([np.array(eq.coefficients) for eq in equations])
+
+        # Stack the equations in a row
         a_stacked = np.row_stack(a)
 
+        # Check if the determinant of the matrix is 0
         if np.linalg.det(a_stacked) == 0:
             # It is non Solvable
             return None
 
-        b = np.array([np.array(eq.b) for eq in system])
+        # b = np.array([np.array(eq.b) for eq in system])
+        # Build the matrix B, with the b values of the equations used
+        b = np.array([np.array(eq.b) for eq in equations])
 
+        # Compute the result of the system of equations
         result = np.linalg.solve(a, b)
 
         return result
@@ -82,8 +99,6 @@ class EquationSolver:
 
         # number of variables without slack
         variables = len(self.equations) - len(self.equations[0].coefficients)
-
-        
 
     def tops(self):
         # get the different combinations of the equations
