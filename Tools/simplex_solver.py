@@ -119,10 +119,6 @@ class SimplexSolver:
 
             print(f"Z = {self.equation(*x[:basicSize])}")
 
-            file = Path(self.parent, "data_exerc6", f"step_{step}.csv")
-
-            np.savetxt(file, M, delimiter=",", fmt="%1.2f", newline=" \\\\\n")
-
             if all(cnHat > 0):
                 return (
                     cbT_basic_variable_coef,

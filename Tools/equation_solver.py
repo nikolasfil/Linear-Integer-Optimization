@@ -60,25 +60,30 @@ class EquationSolver:
         self.combs = [x for x in combinations(self.equations, n)]
 
     def get_system_solution(self, system: list):
-        a = np.array([eq.coefficients for eq in system])
-        b = np.array([eq.b for eq in system])
+        # a = np.array([eq.coefficients for eq in system])
+        # b = np.array([eq.b for eq in system])
 
-        # a = np.array([np.array(eq.coefficients) for eq in system])
-        # b = np.array([np.array(eq.b) for eq in system])
+        a = np.array([np.array(eq.coefficients) for eq in system])
+        a_stacked = np.row_stack(a)
 
-        # if np.linalg.matrix_rank(a) != len(a):
-        #     return None
-        #     # raise ValueError("The system is not solvable")
-        # if np.linalg.det(b) == 0:
-        #     return None
-        #     # raise ValueError("The system is not solvable")
-
-        try:
-            result = np.linalg.solve(a, b)
-        except np.linalg.LinAlgError:
+        if np.linalg.det(a_stacked) == 0:
+            # It is non Solvable
             return None
 
+        b = np.array([np.array(eq.b) for eq in system])
+
+        result = np.linalg.solve(a, b)
+
         return result
+
+    def get_peak_points(self, system, viable_solution):
+
+        x = np.zeros((len(self.equations)))
+
+        # number of variables without slack
+        variables = len(self.equations) - len(self.equations[0].coefficients)
+
+        
 
     def tops(self):
         # get the different combinations of the equations
