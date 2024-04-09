@@ -6,6 +6,7 @@ import numpy as np
 sys.path.append(str(Path(__file__).parents[2]))
 from Tools.simplex_solver import SimplexSolver
 from Tools.simplex_solver_g import SimplexAlgorithm
+from Tools.ssg_1 import SimplexAlgorithm as SimplexAlgorithm1
 
 
 class Exerc06(SimplexSolver):
@@ -40,12 +41,21 @@ class Exerc06_2(SimplexAlgorithm):
         self.solve()
 
 
+class Exerc06_3(SimplexAlgorithm1):
+    def __init__(self, c, A, b):
+        super().__init__(c, A, b)
+
+    def main(self):
+        self.solve()
+
+
 if __name__ == "__main__":
     # exercise = Exerc06()
     A = np.array([[1, 2, -3, 1], [3, 3, 1, 3]])
     b = np.array([24, 36])
     c = np.array([5, 4, -1, 3])
-    exercise = Exerc06_2(c, A, b)
+    # exercise = Exerc06_2(c, A, b)
+    exercise = Exerc06_3(c, A, b)
     exercise.main()
     try:
         pass

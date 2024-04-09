@@ -1,5 +1,7 @@
 import sys
 from pathlib import Path
+from itertools import combinations
+from scipy.special import binom
 
 sys.path.append(str(Path(__file__).parent))
 from equation_class import equation
@@ -16,17 +18,45 @@ class EquationSolver:
         """
         self.equations = kwargs.get("equations", [])
         self.coefficients = kwargs.get("coefficients", [])
+        self.build_all_equations()
 
+    def build_all_equations(self):
         if self.equations:
             self.coefficients = [eq.coefficients for eq in self.equations]
 
         if self.coefficients:
-            self.equations = [equation(*coef) for coef in self.coefficients]
+            self.equations = [
+                equation(*coef, name=f"line{i}")
+                for i, coef in enumerate(self.coefficients)
+            ]
+
+        n = len(self.equations[0].coefficients) + 1
+
+        positive_constraints = [
+            [0 if i != j else 1 for i in range(n)] for j in range(n - 1)
+        ]
+
+        positive_constraints_eq = [
+            equation(*item, name=f"pos_x{i}")
+            for i, item in enumerate(positive_constraints)
+        ]
+
+        self.equations.extend(positive_constraints_eq)
 
     def checker(self, *args):
-        results = [eq(*args) <= eq.c for eq in self.equations]
-        results.extend(item >= 0 for item in args)
+        results = [eq(*args) <= eq.b for eq in self.equations]
         return all(results)
+
+    def number_of_tops(self):
+        n = len(self.equations[0].coefficients)
+        m = len(self.equations)
+        # In the constraints we also have that x_i >= 0
+        return binom(n + m, m)
+
+    def get_combinations(self):
+        n = len(self.equations[0].coefficients)
+
+        self.combs = [x for x in combinations(self.equations, n)]
 
     def tops(self):
         # get the different combinations of the equations

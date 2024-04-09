@@ -22,7 +22,6 @@ class SimplexAlgorithm:
         # Step 1: Update tableau
         B = self.A[:, self.cbIndx]
         B_inv = np.linalg.inv(B)
-
         self.tableau = np.hstack(
             (np.eye(self.m), B_inv, np.expand_dims(np.dot(B_inv, self.b), axis=1))
         )
@@ -85,11 +84,10 @@ class SimplexAlgorithm:
 
 
 if __name__ == "__main__":
-
     # Example usage
-    c = np.array([1, -2, -3, 0, 0])
-    A = np.array([[2, 1, 1, 1, 0], [1, 3, 2, 0, 1]])
-    b = np.array([4, 5])
+    A = np.array([[1, 2, -3, 1], [3, 3, 1, 3]])
+    b = np.array([24, 36])
+    c = np.array([5, 4, -1, 3])
 
     simplex = SimplexAlgorithm(c, A, b)
     solution = simplex.solve()
