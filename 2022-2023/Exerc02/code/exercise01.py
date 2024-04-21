@@ -16,10 +16,11 @@ def solver(x, c, obj, name, sense):
 
 
 def main_a():
-    global x,c,obj
+    global x, c, obj
     # --------- a ---------
     x = creating_variables(4, lowbound=0)
-    c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
+    # c = [[1, 3, 0, 1, 8], [2, 1, 0, 0, 6], [0, 2, 4, 1, 6]]
+    c = [[1, 3, 0, 1, 8], [-2, -1, 0, 0, -6], [0, 2, 4, 1, 6]]
     obj = [2, 4, 1, 1]
 
     solver(x, c, obj, "assignment1a", pulp.LpMaximize)
@@ -27,6 +28,7 @@ def main_a():
     print(f'{" | ".join([x[i].name for i in range(len(x))])} \n')
     for i in range(len(c)):
         print(f"{'  | '.join([str(c[i][j]) for j in range(len(c[i])-1)])} \n")
+
 
 def main_b():
     # --------- b ---------
@@ -44,6 +46,7 @@ def main_b():
 
         solver(x, c, obj, "assignment1b", pulp.LpMaximize)
 
+
 def main_c():
 
     # ----------- c --------------
@@ -60,6 +63,7 @@ def main_c():
 
         solver(x, c, obj, "assignment1c", pulp.LpMaximize)
 
+
 def main_d():
 
     # -------- d ----------
@@ -70,11 +74,13 @@ def main_d():
 
     # solver(y,c,obj,'assignment1d',pulp.LpMinimize)
 
+
 def main():
     main_a()
     # main_b()
     # main_c()
     # main_d()
+
 
 if __name__ == "__main__":
     main()
