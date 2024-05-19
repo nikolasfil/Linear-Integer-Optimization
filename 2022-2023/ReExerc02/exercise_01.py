@@ -14,15 +14,17 @@ class Exerc01(PulpSolver):
             [1, 3, 0, 1],
             [2, 1, 0, 0],
             [0, 1, 4, 1],
-            [2, 4, 1, 1],
+            # [2, 4, 1, 1],
         ]
-        self.b = [
-            [1, 3, 0, 1],
-            [-2, -1, 0, 0],
-            [0, 1, 4, 1],
-            [2, 4, 1, 1],
-        ]
-        self.c = [8, -6, 6, 0]
+        # self.b = [
+        #     [1, 3, 0, 1],
+        #     [-2, -1, 0, 0],
+        #     [0, 1, 4, 1],
+        #     [2, 4, 1, 1],
+        # ]
+        # self.c = [8, 6, 6, 0]
+        self.c = [8, 6, 6]
+        # self.c = [8, -6, 6, 0]
         # can be written better
         self.inequality = ["<=", "<=", "<=", "<="]
         self.obj = [2, 4, 1, 1]
@@ -31,6 +33,7 @@ class Exerc01(PulpSolver):
 
     def main(self):
         self.exerc_01_a()
+        self.presenting_results()
 
 
 if __name__ == "__main__":
