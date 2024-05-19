@@ -26,7 +26,7 @@ class Exerc01(PulpSolver):
         self.c = [8, 6, 6]
         # self.c = [8, -6, 6, 0]
         # can be written better
-        self.inequality = ["<=", "<=", "<=", "<="]
+        self.inequality = ["<=", "<=", "<="]
         self.obj = [2, 4, 1, 1]
         self.sense = "max"
         self.create_components()

@@ -67,15 +67,31 @@ class PulpSolver:
 
         for i, row in enumerate(self.b):
 
-            temp = "".join(
-                [str(row[j]) + " * " + self.x[j].name + " + " for j in range(len(row))]
-            )
+            # creating the constraints
+            # temp = "".join(
+            #     [str(row[j]) + " * " + self.x[j].name + " + " for j in range(len(row))]
+            # )
+
+            # temp = " + ".join([f"{row[j]} * {self.x[j]}" for j in range(len(row))])
+
+            # temp += f" <= {self.c[i]}"
+            # print(temp)
+            # self.model += eval(temp)
 
             self.model += (
                 sum([self.x[j] * row[j] for j in range(len(row))]) <= self.c[i]
             )
 
         self.model += sum([self.x[i] * self.obj[i] for i in range(len(self.obj))])
+
+    def presenting_results(self):
+        print("Status:", pulp.LpStatus[self.status])
+        print("Objective:", pulp.value(self.model.objective))
+        for var in self.model.variables():
+            print(f"{var.name }= {var.varValue}")
+
+        for name, constraint in self.model.constraints.items():
+            print(f"{name}: {constraint.value()}")
 
 
 if __name__ == "__main__":
