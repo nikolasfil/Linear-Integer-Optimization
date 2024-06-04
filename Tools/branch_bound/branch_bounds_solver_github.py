@@ -2,6 +2,11 @@ import numpy as np
 from scipy.optimize import linprog
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent))
+from equation_class import equation
 
 
 class BB:
@@ -19,14 +24,12 @@ class BB:
 
     def main(self):
         self.variable_chooser()
-        print(self.variable_series)
-        self.branch_and_bound()
+        # self.branch_and_bound_original()
 
-        print(self.best_solution)
-        print(self.node_values)
-        print(self.edges)
+    def branch_and_bound(self):
+        pass
 
-    def branch_and_bound(self, x1_range=(0, None), x2_range=(0, None)):
+    def branch_and_bound_original(self, x1_range=(0, None), x2_range=(0, None)):
         bounds = [x1_range, x2_range]
 
         res = linprog(self.c, A_ub=self.A, b_ub=self.b, bounds=bounds, method="highs")
@@ -54,16 +57,24 @@ class BB:
             if not x1_val.is_integer():
                 x1_floor = int(np.floor(x1_val))
                 self.edges.append((node_id, self.node_counter))
-                self.branch_and_bound(x1_range=(0, x1_floor), x2_range=x2_range)
+                self.branch_and_bound_original(
+                    x1_range=(0, x1_floor), x2_range=x2_range
+                )
                 self.edges.append((node_id, self.node_counter))
-                self.branch_and_bound(x1_range=(x1_floor + 1, None), x2_range=x2_range)
+                self.branch_and_bound_original(
+                    x1_range=(x1_floor + 1, None), x2_range=x2_range
+                )
 
             if not x2_val.is_integer():
                 x2_floor = int(np.floor(x2_val))
                 self.edges.append((node_id, self.node_counter))
-                self.branch_and_bound(x1_range=x1_range, x2_range=(0, x2_floor))
+                self.branch_and_bound_original(
+                    x1_range=x1_range, x2_range=(0, x2_floor)
+                )
                 self.edges.append((node_id, self.node_counter))
-                self.branch_and_bound(x1_range=x1_range, x2_range=(x2_floor + 1, None))
+                self.branch_and_bound_original(
+                    x1_range=x1_range, x2_range=(x2_floor + 1, None)
+                )
 
     def variable_chooser(self):
         for i in range(len(self.c)):

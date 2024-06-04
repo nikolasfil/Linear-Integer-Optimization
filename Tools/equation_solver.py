@@ -21,7 +21,7 @@ class EquationSolver:
         self.coefficients = kwargs.get("coefficients", [])
         self.current_system = None
         self.build_all_equations()
-        self.parent = kwargs.get("parent", Path(__file__).parent)
+        self.parent = kwargs.get("parent", Path(__name__).parent)
 
     def build_all_equations(self):
         if self.equations:
@@ -33,6 +33,14 @@ class EquationSolver:
                 for i, coef in enumerate(self.coefficients)
             ]
 
+        self.add_positivity_constraints()
+
+        self.equations = np.array(self.equations)
+
+        self.num_coefficients = len(self.equations[0].coefficients)
+        self.num_equations = len(self.equations)
+
+    def add_positivity_constraints(self):
         n = len(self.equations[0].coefficients) + 1
 
         positive_constraints = [
@@ -45,11 +53,6 @@ class EquationSolver:
         ]
 
         self.equations.extend(positive_constraints_eq)
-
-        self.equations = np.array(self.equations)
-
-        self.num_coefficients = len(self.equations[0].coefficients)
-        self.num_equations = len(self.equations)
 
     def checker(self, *args):
         results = []
