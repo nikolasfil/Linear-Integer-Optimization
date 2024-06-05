@@ -1,0 +1,680 @@
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/63611fa17a2347238b531559f877477d-pulp.lp -o /tmp/63611fa17a2347238b531559f877477d-pulp.sol
+Reading problem data from '/tmp/63611fa17a2347238b531559f877477d-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   0.000000000e+00  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/63611fa17a2347238b531559f877477d-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/5409cb914873426e8ac3d4c0c1fc7e7a-pulp.lp -o /tmp/5409cb914873426e8ac3d4c0c1fc7e7a-pulp.sol
+Reading problem data from '/tmp/5409cb914873426e8ac3d4c0c1fc7e7a-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   9.000000000e+00  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/5409cb914873426e8ac3d4c0c1fc7e7a-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/e6b10ec2f9174d19807df922e2ff5ac6-pulp.lp -o /tmp/e6b10ec2f9174d19807df922e2ff5ac6-pulp.sol
+Reading problem data from '/tmp/e6b10ec2f9174d19807df922e2ff5ac6-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   1.400000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/e6b10ec2f9174d19807df922e2ff5ac6-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/715d268ac97c41b08cebe12e1865ae81-pulp.lp -o /tmp/715d268ac97c41b08cebe12e1865ae81-pulp.sol
+Reading problem data from '/tmp/715d268ac97c41b08cebe12e1865ae81-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   2.300000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/715d268ac97c41b08cebe12e1865ae81-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/4a87a592f69d471d8351828b76578e17-pulp.lp -o /tmp/4a87a592f69d471d8351828b76578e17-pulp.sol
+Reading problem data from '/tmp/4a87a592f69d471d8351828b76578e17-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   3.000000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/4a87a592f69d471d8351828b76578e17-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/1d9cbdbe0cf54ebbb07405b90bf607da-pulp.lp -o /tmp/1d9cbdbe0cf54ebbb07405b90bf607da-pulp.sol
+Reading problem data from '/tmp/1d9cbdbe0cf54ebbb07405b90bf607da-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/1d9cbdbe0cf54ebbb07405b90bf607da-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/0d246dd4a7004bc0a80499a5fbaa2bdd-pulp.lp -o /tmp/0d246dd4a7004bc0a80499a5fbaa2bdd-pulp.sol
+Reading problem data from '/tmp/0d246dd4a7004bc0a80499a5fbaa2bdd-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/0d246dd4a7004bc0a80499a5fbaa2bdd-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/0accc32cddb24b07aeaf04dfcc97c285-pulp.lp -o /tmp/0accc32cddb24b07aeaf04dfcc97c285-pulp.sol
+Reading problem data from '/tmp/0accc32cddb24b07aeaf04dfcc97c285-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/0accc32cddb24b07aeaf04dfcc97c285-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/c5990a73c6504045b7ecfea6b12593c4-pulp.lp -o /tmp/c5990a73c6504045b7ecfea6b12593c4-pulp.sol
+Reading problem data from '/tmp/c5990a73c6504045b7ecfea6b12593c4-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   1.700000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/c5990a73c6504045b7ecfea6b12593c4-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/bf80cfeae382420bb3ec0eaec9daacc1-pulp.lp -o /tmp/bf80cfeae382420bb3ec0eaec9daacc1-pulp.sol
+Reading problem data from '/tmp/bf80cfeae382420bb3ec0eaec9daacc1-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   2.600000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/bf80cfeae382420bb3ec0eaec9daacc1-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/912ab33518e342758a16a7db7555d1da-pulp.lp -o /tmp/912ab33518e342758a16a7db7555d1da-pulp.sol
+Reading problem data from '/tmp/912ab33518e342758a16a7db7555d1da-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   3.100000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/912ab33518e342758a16a7db7555d1da-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/85d223507bbf4ab0958b5b246a227573-pulp.lp -o /tmp/85d223507bbf4ab0958b5b246a227573-pulp.sol
+Reading problem data from '/tmp/85d223507bbf4ab0958b5b246a227573-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/85d223507bbf4ab0958b5b246a227573-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/afa87c8fe050486181c8df837ae895ec-pulp.lp -o /tmp/afa87c8fe050486181c8df837ae895ec-pulp.sol
+Reading problem data from '/tmp/afa87c8fe050486181c8df837ae895ec-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/afa87c8fe050486181c8df837ae895ec-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/e352d7f6e8cf49e4b9c9375eb67191e4-pulp.lp -o /tmp/e352d7f6e8cf49e4b9c9375eb67191e4-pulp.sol
+Reading problem data from '/tmp/e352d7f6e8cf49e4b9c9375eb67191e4-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/e352d7f6e8cf49e4b9c9375eb67191e4-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/a86f8f6685574239a7bed75f091c203d-pulp.lp -o /tmp/a86f8f6685574239a7bed75f091c203d-pulp.sol
+Reading problem data from '/tmp/a86f8f6685574239a7bed75f091c203d-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/a86f8f6685574239a7bed75f091c203d-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/48b40f59cb24492ca66bda21d976cfbd-pulp.lp -o /tmp/48b40f59cb24492ca66bda21d976cfbd-pulp.sol
+Reading problem data from '/tmp/48b40f59cb24492ca66bda21d976cfbd-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/48b40f59cb24492ca66bda21d976cfbd-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/a0e102a7c3694af99e32ead1cbfd8d59-pulp.lp -o /tmp/a0e102a7c3694af99e32ead1cbfd8d59-pulp.sol
+Reading problem data from '/tmp/a0e102a7c3694af99e32ead1cbfd8d59-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   2.300000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/a0e102a7c3694af99e32ead1cbfd8d59-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/50270bb69ed641609c40b3d9a93bd8ee-pulp.lp -o /tmp/50270bb69ed641609c40b3d9a93bd8ee-pulp.sol
+Reading problem data from '/tmp/50270bb69ed641609c40b3d9a93bd8ee-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   3.200000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/50270bb69ed641609c40b3d9a93bd8ee-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/9b1a5189f3be46ceacb7d819a0d99c37-pulp.lp -o /tmp/9b1a5189f3be46ceacb7d819a0d99c37-pulp.sol
+Reading problem data from '/tmp/9b1a5189f3be46ceacb7d819a0d99c37-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   3.700000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/9b1a5189f3be46ceacb7d819a0d99c37-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/56062a0e5abb4c509e3ad9fe8a50e92b-pulp.lp -o /tmp/56062a0e5abb4c509e3ad9fe8a50e92b-pulp.sol
+Reading problem data from '/tmp/56062a0e5abb4c509e3ad9fe8a50e92b-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/56062a0e5abb4c509e3ad9fe8a50e92b-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/c7b844ec8a5945d4ad877fcfc9d3034a-pulp.lp -o /tmp/c7b844ec8a5945d4ad877fcfc9d3034a-pulp.sol
+Reading problem data from '/tmp/c7b844ec8a5945d4ad877fcfc9d3034a-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/c7b844ec8a5945d4ad877fcfc9d3034a-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/bd1a35cd84994dfe804c7ff483b7138e-pulp.lp -o /tmp/bd1a35cd84994dfe804c7ff483b7138e-pulp.sol
+Reading problem data from '/tmp/bd1a35cd84994dfe804c7ff483b7138e-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/bd1a35cd84994dfe804c7ff483b7138e-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/0adf5a603df047baa760bf0119b25405-pulp.lp -o /tmp/0adf5a603df047baa760bf0119b25405-pulp.sol
+Reading problem data from '/tmp/0adf5a603df047baa760bf0119b25405-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/0adf5a603df047baa760bf0119b25405-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/7ed4f0ebd15c476597eb39d26e1f71e3-pulp.lp -o /tmp/7ed4f0ebd15c476597eb39d26e1f71e3-pulp.sol
+Reading problem data from '/tmp/7ed4f0ebd15c476597eb39d26e1f71e3-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/7ed4f0ebd15c476597eb39d26e1f71e3-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/95d9239c1d8f489487bcac3fd2c8fa18-pulp.lp -o /tmp/95d9239c1d8f489487bcac3fd2c8fa18-pulp.sol
+Reading problem data from '/tmp/95d9239c1d8f489487bcac3fd2c8fa18-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+~     0: obj =   4.000000000e+01  infeas =  0.000e+00
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/95d9239c1d8f489487bcac3fd2c8fa18-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/fcb397b087bb4cedbf2bf62671590c07-pulp.lp -o /tmp/fcb397b087bb4cedbf2bf62671590c07-pulp.sol
+Reading problem data from '/tmp/fcb397b087bb4cedbf2bf62671590c07-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/fcb397b087bb4cedbf2bf62671590c07-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/38fd402606fa4d69ad0dcd361713fa60-pulp.lp -o /tmp/38fd402606fa4d69ad0dcd361713fa60-pulp.sol
+Reading problem data from '/tmp/38fd402606fa4d69ad0dcd361713fa60-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/38fd402606fa4d69ad0dcd361713fa60-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/02c33165e724454e86dba44ceed525e7-pulp.lp -o /tmp/02c33165e724454e86dba44ceed525e7-pulp.sol
+Reading problem data from '/tmp/02c33165e724454e86dba44ceed525e7-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/02c33165e724454e86dba44ceed525e7-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/cc72b000a94e487f8b4bb539b4a79eb2-pulp.lp -o /tmp/cc72b000a94e487f8b4bb539b4a79eb2-pulp.sol
+Reading problem data from '/tmp/cc72b000a94e487f8b4bb539b4a79eb2-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/cc72b000a94e487f8b4bb539b4a79eb2-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/9ed456f150ad415e8aaf8d3bcca71f1f-pulp.lp -o /tmp/9ed456f150ad415e8aaf8d3bcca71f1f-pulp.sol
+Reading problem data from '/tmp/9ed456f150ad415e8aaf8d3bcca71f1f-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/9ed456f150ad415e8aaf8d3bcca71f1f-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/575058e215cc4addb11a1426d0dff654-pulp.lp -o /tmp/575058e215cc4addb11a1426d0dff654-pulp.sol
+Reading problem data from '/tmp/575058e215cc4addb11a1426d0dff654-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/575058e215cc4addb11a1426d0dff654-pulp.sol'...
+GLPSOL--GLPK LP/MIP Solver 5.0
+Parameter(s) specified in the command line:
+ --cpxlp /tmp/67b76b2b49964b339d8168ff88212a89-pulp.lp -o /tmp/67b76b2b49964b339d8168ff88212a89-pulp.sol
+Reading problem data from '/tmp/67b76b2b49964b339d8168ff88212a89-pulp.lp'...
+6 rows, 5 columns, 10 non-zeros
+17 lines were read
+GLPK Simplex Optimizer 5.0
+6 rows, 5 columns, 10 non-zeros
+Preprocessing...
+PROBLEM HAS NO PRIMAL FEASIBLE SOLUTION
+If you need actual output for non-optimal solution, use --nopresol
+Time used:   0.0 secs
+Memory used: 0.0 Mb (39693 bytes)
+Writing basic solution to '/tmp/67b76b2b49964b339d8168ff88212a89-pulp.sol'...
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 0, 0, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 0.0
+x1= 0.0
+x2= 0.0
+x3= 0.0
+x4= 0.0
+x5= 0.0
+_C1: -14.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 0, 0, 1)
+--------------------------------------------------
+Status: Optimal
+Objective: 9.0
+x1= 0.0
+x2= 0.0
+x3= 0.0
+x4= 0.0
+x5= 1.0
+_C1: -9.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 0, 1, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 14.0
+x1= 0.0
+x2= 0.0
+x3= 0.0
+x4= 1.0
+x5= 0.0
+_C1: -7.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 0, 1, 1)
+--------------------------------------------------
+Status: Optimal
+Objective: 23.0
+x1= 0.0
+x2= 0.0
+x3= 0.0
+x4= 1.0
+x5= 1.0
+_C1: -2.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 1, 0, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 30.0
+x1= 0.0
+x2= 0.0
+x3= 1.0
+x4= 0.0
+x5= 0.0
+_C1: -4.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 1, 0, 1)
+The model is infeasible. (0, 0, 1, 0, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 1, 1, 0)
+The model is infeasible. (0, 0, 1, 1, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 0, 1, 1, 1)
+The model is infeasible. (0, 0, 1, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 0, 0, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 17.0
+x1= 0.0
+x2= 1.0
+x3= 0.0
+x4= 0.0
+x5= 0.0
+_C1: -9.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 0, 0, 1)
+--------------------------------------------------
+Status: Optimal
+Objective: 26.0
+x1= 0.0
+x2= 1.0
+x3= 0.0
+x4= 0.0
+x5= 1.0
+_C1: -4.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 0, 1, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 31.0
+x1= 0.0
+x2= 1.0
+x3= 0.0
+x4= 1.0
+x5= 0.0
+_C1: -2.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 0, 1, 1)
+The model is infeasible. (0, 1, 0, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 1, 0, 0)
+The model is infeasible. (0, 1, 1, 0, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 1, 0, 1)
+The model is infeasible. (0, 1, 1, 0, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 1, 1, 0)
+The model is infeasible. (0, 1, 1, 1, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (0, 1, 1, 1, 1)
+The model is infeasible. (0, 1, 1, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 0, 0, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 23.0
+x1= 1.0
+x2= 0.0
+x3= 0.0
+x4= 0.0
+x5= 0.0
+_C1: -8.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 0, 0, 1)
+--------------------------------------------------
+Status: Optimal
+Objective: 32.0
+x1= 1.0
+x2= 0.0
+x3= 0.0
+x4= 0.0
+x5= 1.0
+_C1: -3.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 0, 1, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 37.0
+x1= 1.0
+x2= 0.0
+x3= 0.0
+x4= 1.0
+x5= 0.0
+_C1: -1.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 0, 1, 1)
+The model is infeasible. (1, 0, 0, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 1, 0, 0)
+The model is infeasible. (1, 0, 1, 0, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 1, 0, 1)
+The model is infeasible. (1, 0, 1, 0, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 1, 1, 0)
+The model is infeasible. (1, 0, 1, 1, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 0, 1, 1, 1)
+The model is infeasible. (1, 0, 1, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 0, 0, 0)
+--------------------------------------------------
+Status: Optimal
+Objective: 40.0
+x1= 1.0
+x2= 1.0
+x3= 0.0
+x4= 0.0
+x5= 0.0
+_C1: -3.0
+_C2: 0.0
+_C3: 0.0
+_C4: 0.0
+_C5: 0.0
+_C6: 0.0
+--------------------------------------------------
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 0, 0, 1)
+The model is infeasible. (1, 1, 0, 0, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 0, 1, 0)
+The model is infeasible. (1, 1, 0, 1, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 0, 1, 1)
+The model is infeasible. (1, 1, 0, 1, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 1, 0, 0)
+The model is infeasible. (1, 1, 1, 0, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 1, 0, 1)
+The model is infeasible. (1, 1, 1, 0, 1)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 1, 1, 0)
+The model is infeasible. (1, 1, 1, 1, 0)
+[[6, 5, 10, 7, 5]] [14] [23, 17, 30, 14, 9] (1, 1, 1, 1, 1)
+The model is infeasible. (1, 1, 1, 1, 1)
