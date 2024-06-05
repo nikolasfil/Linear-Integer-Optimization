@@ -13,7 +13,9 @@ def invert_matrix(matrix):
     Returns:
         list: The inverted matrix.
     """
-
+    np.set_printoptions(
+        formatter={"all": lambda x: str(fractions.Fraction(x).limit_denominator())}
+    )
     return np.linalg.inv(matrix)
 
 
@@ -26,11 +28,8 @@ def main():
     ]
 
     print(invert_matrix(matrix))
-    
 
 
 if __name__ == "__main__":
-    np.set_printoptions(
-        formatter={"all": lambda x: str(fractions.Fraction(x).limit_denominator())}
-    )
+
     main()
